@@ -13,7 +13,7 @@ export interface IUserEntity {
     telephone?: number,
     emergency?: string,
     medicines?: string,
-    photow: string,
+    photo?: string,
     comments?: string,
     createdAt?: Date,
     updatedAt?: Date
