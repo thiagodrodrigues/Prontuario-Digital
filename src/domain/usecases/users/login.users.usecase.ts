@@ -1,10 +1,10 @@
-import { IPeopleRepository } from "../../repositories/people.repository.interface";
+import { IUsersRepository } from "../../repositories/users.repository.interface";
 import { IUseCase } from "../usecase.interface";
-import PeopleRepository from "../../../adapters/repositories/people.repository";
+import UsersRepository from "../../../adapters/repositories/users.repository";
 import jwt from 'jsonwebtoken';
 
 export class LoginAuthUseCase implements IUseCase {
-    constructor(private _repository: IPeopleRepository){
+    constructor(private _repository: IUsersRepository){
 
     }
 
@@ -28,5 +28,5 @@ export class LoginAuthUseCase implements IUseCase {
 }
 
 export default new LoginAuthUseCase(
-    PeopleRepository
+    UsersRepository
 );

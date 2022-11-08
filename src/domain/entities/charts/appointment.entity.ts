@@ -1,7 +1,9 @@
 export interface IAppointmentEntity {
     idAppointment: number,
-    patientsCPF: number,
-    doctorsCRM: number,
+    idUser: number,
+    doctor: string,
+    hospital: string,
+    crm?: number,
     date: Date,
     symptoms?: string,
     medicines?: string,
