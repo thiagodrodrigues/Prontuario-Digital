@@ -1,11 +1,11 @@
 export interface IExamEntity {
     idExams: number,
-    patientsCPF: number,
+    idUser: number,
     exam: string,
     date: Date,
     status: string,
     clinic: string,
-    crm?: number,
+    doctor: string,
     comments?: string,
     createdAt?: Date,
     updatedAt?: Date
