@@ -11,7 +11,7 @@ export default function (user:any): IUserEntity | undefined {
         idUser: user.idUser,
         name: user.name,
         email: user.email,
-        password: user.password,
+        password: shufflePass,
         birthDate: user.birthDate, 
         healthPlan:user.healthPlan,
         allergy: user.allergy,
@@ -31,12 +31,22 @@ export default function (user:any): IUserEntity | undefined {
     if(user.logado){
         (userGeneral as IUserEntity).idUser = user.idUser;
         (userGeneral as IUserEntity).name = user.name
-        (userGeneral as IUserEntity).apartment = user.apartment;
         (userGeneral as IUserEntity).email = user.email;
         (userGeneral as IUserEntity).password = user.password;
+        (userGeneral as IUserEntity).birthDate = user.birthDate;
+        (userGeneral as IUserEntity).healthPlan = user.healthPlan
+        (userGeneral as IUserEntity).allergy = user.allergy;
+        (userGeneral as IUserEntity).bloodType = user.bloodType;
+        (userGeneral as IUserEntity).weight = user.weight;
+        (userGeneral as IUserEntity).height = user.height;
+        (userGeneral as IUserEntity).address = user.address;
+        (userGeneral as IUserEntity).telephone = user.telephone;
+        (userGeneral as IUserEntity).emergency = user.emergency
+        (userGeneral as IUserEntity).medicines = user.medicines;
+        (userGeneral as IUserEntity).photo = user.photo;
         (userGeneral as IUserEntity).createdAt = user.createdAt;
         (userGeneral as IUserEntity).updatedAt = user.updatedAt;
-        (userGeneral as IUserEntity).photo = user.photo;
+      
     }
 
     return (userGeneral as IUserEntity);
