@@ -1,6 +1,6 @@
 import * as Sequelize from "sequelize";
 import dbConfig from "../../config/db.config";
-import {IDatabaseModel} from "../database.model.interface";
+import { IDatabaseModel } from "../database.model.interface";
 
 export class MySqlDatabase implements IDatabaseModel {
     private static _instance: MySqlDatabase;
