@@ -1,11 +1,11 @@
-/* import { IDatabaseModel } from "../../infrastructure/persistence/databasemodel.interface"; */
+import { IDatabaseModel } from "../../infrastructure/persistence/database.model.interface";
 import { UsersEntity } from "../../domain/entities/users/users.entity";
-/* import { MysqlDatabase } from "../../infrastructure/persistence/mysql/mysql.database"; */
+import { MySqlDatabase } from "../../infrastructure/persistence/mysql/mysql.Database";
 import { IUsersRepository } from "../../domain/repositories/users.repository.interface";
 import * as Sequelize from 'sequelize'
-/* import userModel from '../../infrastructure/persistence/mysql/models/user.models.mysql.database';
-import modelsToEntities from '../../infrastructure/persistence/mysql/helpers/modelsToEntities.user.mysql.database';
-import entitiesToModels from '../../infrastructure/persistence/mysql/helpers/entitiesToModels.user.mysql.database'; */
+import userModel from '../../infrastructure/persistence/mysql/models/user.models.mysql.DB';
+import modelsToEntities from '../../infrastructure/persistence/mysql/helpers/users.modelstoEntities.mysql.DB';
+import entitiesToModels from '../../infrastructure/persistence/mysql/helpers/users.entitiestoModel.mysql.DB';
 
 export class UsersRepository implements IUsersRepository {
     constructor(
@@ -15,9 +15,9 @@ export class UsersRepository implements IUsersRepository {
 
     async readById(resourceId: number): Promise<UsersEntity | undefined> {
         try{
-            const user = await this._database.read(this._modelUser, resourceId, {});
+            const userGeneral = await this._database.read(this._modelUser, resourceId, {});
             
-            return modelsToEntities(user);
+            return modelsToEntities(userGeneral);
         } catch(err){
             throw new Error((err as Error).message);
         }
@@ -25,11 +25,11 @@ export class UsersRepository implements IUsersRepository {
 
     async readByEmail(email: string): Promise<UsersEntity | undefined> {
         try{
-            const user = await this._database.readString(this._modelUser, {
+            const userGeneral = await this._database.readByWhere(this._modelUser, {
                 email: email
             });
             
-            return modelsToEntities(user);
+            return modelsToEntities(userGeneral);
         } catch(err){
             throw new Error((err as Error).message);
         }
@@ -37,20 +37,20 @@ export class UsersRepository implements IUsersRepository {
 
     async readByWhere(email: string, password: string): Promise<UsersEntity | undefined> {
         try{
-            const users = await this._database.readByWhere(this._modelUser, {
+            const userGeneral = await this._database.readByWhere(this._modelUser, {
                 email: email,
                 password: password
             });
             
-            return modelsToEntities(users);
+            return modelsToEntities(userGeneral);
         } catch(err){
             throw new Error((err as Error).message);
         }
     }
 
     async create(resource: UsersEntity): Promise<UsersEntity> {
-        const { users }  = entitiesToModels(resource);
-        await this._database.create(this._modelUser, users);
+        const { userGeneral }  = entitiesToModels(resource);
+        await this._database.create(this._modelUser, userGeneral);
         return resource;
     }
 
@@ -59,8 +59,8 @@ export class UsersRepository implements IUsersRepository {
     }
 
     async list(): Promise<UsersEntity[]> {
-        const user = await this._database.list(this._modelUser, {});
-        const clients = user.map(modelsToEntities);
+        const userGeneral = await this._database.list(this._modelUser, {});
+        const clients = userGeneral.map(modelsToEntities);
         return clients;
     }
 
@@ -68,14 +68,14 @@ export class UsersRepository implements IUsersRepository {
         console.log(resource)
         let userModel = await this._database.read(this._modelUser, resource.idUser);
         console.log(`User Model: ${userModel}`);
-        const { users } = entitiesToModels(resource);
-        console.log(users);
-        await this._database.update(userModel, users);
+        const { userGeneral } = entitiesToModels(resource);
+        console.log(userGeneral);
+        await this._database.update(userModel, userGeneral);
         return resource;
     }
 }
 
 export default new UsersRepository(
-    MysqlDatabase.getInstance(),
+    MySqlDatabase.getInstance(),
     userModel
     );
