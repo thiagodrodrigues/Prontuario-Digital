@@ -9,7 +9,7 @@ export default function (user: IUserEntity ){
         idUser: user.idUser,
         name: user.name,
         email: user.email,
-        password: user.password,
+        password: shufflePass,
         birthDate: user.birthDate, 
         healthPlan:user.healthPlan,
         allergy: user.allergy,
