@@ -1,6 +1,6 @@
 import { IDatabaseModel } from "../../infrastructure/persistence/database.model.interface";
 import { UsersEntity } from "../../domain/entities/users/users.entity";
-import { MySqlDatabase } from "../../infrastructure/persistence/mysql/mysql.Database";
+import { MySqlDatabase } from "../../infrastructure/persistence/mysql/mysql.database";
 import { IUsersRepository } from "../../domain/repositories/users.repository.interface";
 import * as Sequelize from 'sequelize'
 import userModel from '../../infrastructure/persistence/mysql/models/user.models.mysql.DB';
