@@ -11,7 +11,8 @@ export class UsersRepository implements IUsersRepository {
     constructor(
         private _database: IDatabaseModel, 
         private _modelUser: Sequelize.ModelCtor<Sequelize.Model<any, any>>
-        ){}
+        ){       
+        }
 
     async readById(resourceId: number): Promise<UsersEntity | undefined> {
         try{

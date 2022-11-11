@@ -2,7 +2,7 @@ import * as Sequelize from 'sequelize';
 
 export default {
     up: (queryInterface: Sequelize.QueryInterface) => {
-        return queryInterface.createTable('user', {
+        return queryInterface.createTable('exams', {
             idExams: {
                 type: Sequelize.DataTypes.INTEGER,
                 primaryKey: true,
@@ -12,7 +12,7 @@ export default {
             idUser: {
                 type: Sequelize.DataTypes.INTEGER,
                 allowNull: false,
-                references: {         // Exams belongsTo User 1:1
+                references: {         // Exams belongsTo User 1:N
                   model: {
                             tableName: 'user'
                          },
@@ -32,6 +32,6 @@ export default {
         });
     },
     down: (queryInterface: Sequelize.QueryInterface) => {
-        return queryInterface.dropTable('user');
+        return queryInterface.dropTable('exams');
     }
 }
