@@ -4,8 +4,8 @@ import { MySqlDatabase } from "../../infrastructure/persistence/mysql/mysql.Data
 import { IAppointmentsRepository } from "../../domain/repositories/appointments.repository.interface"
 import * as Sequelize from 'sequelize'
 import examsModel from '../../infrastructure/persistence/mysql/models/exams.models.mysql.DB';
-import modelsToEntities from '../../infrastructure/persistence/mysql/helpers/exams.modelstoEntities.mysql.DB'
-import entitiesToModels from '../../infrastructure/persistence/mysql/helpers/exams.entitiestoModel.mysql.DB'
+import modelsToEntities from '../../infrastructure/persistence/mysql/helpers/appointment.modeltoEntity.mysql'
+import entitiesToModels from '../../infrastructure/persistence/mysql/helpers/appointments.entitiestoModel.mysql'
 
 
 export class AppointmentRepository implements IAppointmentsRepository {

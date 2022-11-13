@@ -1,6 +1,6 @@
 import { ExamEntity } from "../../entities/exams/exams.entity";
 import { IExamsRepository } from "../../repositories/exams.repository.interface";
-import ExamRepository from "../../../adapters/repositories/charts.repository";
+import ExamRepository from "../../../adapters/repositories/exams.repository";
 import { IUseCase } from "../usecase.interface";
 
 class ListExamUseCase implements IUseCase {
