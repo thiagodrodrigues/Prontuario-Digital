@@ -14,7 +14,7 @@ export default {
                 allowNull: false,
                 references: {         // Exams belongsTo User 1:N
                   model: {
-                            tableName: 'user'
+                            tableName: 'users'
                          },
 
                   key: 'idUser'
@@ -25,7 +25,7 @@ export default {
             status:Sequelize.DataTypes.STRING,
             clinic: Sequelize.DataTypes.STRING,
             doctor: Sequelize.DataTypes.STRING,
-            comments: Sequelize.DataTypes.NUMBER,
+            comments: Sequelize.DataTypes.INTEGER,
             createdAt: Sequelize.DataTypes.DATE,
             updatedAt: Sequelize.DataTypes.DATE,
             
