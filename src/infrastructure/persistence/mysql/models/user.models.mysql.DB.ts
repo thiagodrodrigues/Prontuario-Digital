@@ -1,7 +1,7 @@
 import * as Sequelize from "sequelize";
-import { MySqlDatabase } from "../mysql.Database";
+import { MySqlDatabase } from "../mysql.database";
 
-export default MySqlDatabase.getInstance().createModel('user',{
+export default MySqlDatabase.getInstance().createModel('users',{
     idUser: {
         type: Sequelize.DataTypes.INTEGER,
         primaryKey: true,
@@ -15,12 +15,12 @@ export default MySqlDatabase.getInstance().createModel('user',{
     healthPlan:Sequelize.DataTypes.STRING,
     allergy: Sequelize.DataTypes.STRING,
     bloodType: Sequelize.DataTypes.STRING,
-    weight: Sequelize.DataTypes.NUMBER,
-    height: Sequelize.DataTypes.NUMBER,
+    weight: Sequelize.DataTypes.INTEGER,
+    height: Sequelize.DataTypes.INTEGER,
     address: Sequelize.DataTypes.STRING,
-    telephone: Sequelize.DataTypes.NUMBER,
-    emergency: Sequelize.DataTypes.NUMBER,
-    medicines: Sequelize.DataTypes.NUMBER,
+    telephone: Sequelize.DataTypes.STRING,
+    emergency: Sequelize.DataTypes.STRING,
+    medicines: Sequelize.DataTypes.STRING,
     photo: Sequelize.DataTypes.STRING,
     comments: Sequelize.DataTypes.STRING,
     createdAt: Sequelize.DataTypes.DATE,

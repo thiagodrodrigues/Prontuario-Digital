@@ -3,7 +3,7 @@ import { IUsersRepository } from "../../repositories/users.repository.interface"
 import { IUseCase } from "../usecase.interface";
 import UsersRepository from "../../../adapters/repositories/users.repository";
 
-export class ReadEmailUseCase implements IUseCase {
+class ReadEmailUseCase implements IUseCase {
 
     constructor(private _repository: IUsersRepository) {
 

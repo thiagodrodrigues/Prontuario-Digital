@@ -7,5 +7,5 @@ export interface IUsersRepository {
     deleteById(resourceId: number): Promise<void>,
     list(): Promise<UsersEntity[]>,
     updateById(resource: UsersEntity): Promise<UsersEntity | undefined>,
-    readByWhere(user: string, pass: string): Promise<UsersEntity | undefined>
+    readByWhere(user: string): Promise<UsersEntity | undefined>
 }

@@ -12,7 +12,7 @@ class AuthMiddleware {
 
             if(!token){
                 res.status(401).send({
-                    error: constantsConfig.USERS.MESSAGES.ERROR.USER_UNAUTHENTICATED
+                    error: constantsConfig.USERS.MESSAGES.ERROR.USER_UNAUTHENTICATEDE
                 });
             } else {
                 const decoded = jwt.verify(token, String(process.env.SECRET_KEY));

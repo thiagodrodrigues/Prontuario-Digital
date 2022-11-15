@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "start": "tsc && node --unhandled-rejections=strict ./dist/infrastructure/app/app.js",
-    "migration": "tsc && npx sequelize db:create && npx sequelize db:migrate"
+    "start": "tsc && node --unhandled-rejections=strict -r dotenv/config ./dist/infrastructure/app/app.js",
+    "debug": "set DEBUG=* && npm run start",
+    "migrations": "tsc && npx sequelize db:create && npx sequelize db:migrate"
   },
   "repository": {
     "type": "git",
