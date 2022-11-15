@@ -2,12 +2,12 @@ import { UsersEntity } from "../../../../domain/entities/users/users.entity";
 import { IUserEntity } from "../../../../domain/entities/users/user.entity";
 import { IChartEntity } from "../../../../domain/entities/users/chart.entity";
 
-export default function (user:any): UsersEntity | undefined {
+export default function (user:any): IChartEntity | undefined {
     if(!user)
     return;
 
 
-    let userGeneral: UsersEntity = {
+    let userGeneral: IChartEntity = {
         idUser: user.idUser,
         name: user.name,
         email: user.email,
@@ -29,5 +29,5 @@ export default function (user:any): UsersEntity | undefined {
     };
 
 
-    return (userGeneral as UsersEntity);
+    return (userGeneral as IChartEntity);
 }

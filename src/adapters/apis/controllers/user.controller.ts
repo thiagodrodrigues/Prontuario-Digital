@@ -16,7 +16,23 @@ class UserController {
         const user = await readUserUsecase.execute({
             idUser: Number(req.params.idUser)
         });
-        res.status(200).send(user);
+        res.status(200).send({
+            idUser: user!.idUser,
+            name: user!.name,
+            email: user!.email,
+            birthDate: user!.birthDate,
+            healthPlan: user!.healthPlan,
+            allergy: user!.allergy,
+            bloodType: user!.bloodType,
+            weight: user!.weight,
+            height: user!.height,
+            address: user!.address,
+            telephone: user!.telephone,
+            emergency: user!.emergency,
+            medicines: user!.medicines,
+            photo: user!.photo,
+            comments: user!.comments,
+        });
     }
 
     async createUserRequeriment(req: express.Request, res: express.Response) {
@@ -92,11 +108,12 @@ class UserController {
     }
 
     async updateUser(req: express.Request, res: express.Response) {
+        let shufflePass = bcrypt.hashSync(req.body.password,10)
         const userModel = await updateUserUsecase.execute({
             idUser: Number(req.params.idUser),
             name: req.body.name,
 	        email: req.body.email,
-	        password: req.body.password,
+	        password: shufflePass,
         });
         log(userModel);
         res.status(200).send({
