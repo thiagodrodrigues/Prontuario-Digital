@@ -5,13 +5,13 @@ export default function (user:any): IUserEntity | undefined {
     if(!user)
     return
 
-    let shufflePass = bcrypt.hashSync(user.password, 10) 
+    // let shufflePass = bcrypt.hashSync(user.password, 10) 
 
     let userGeneral: IUserEntity = {
         idUser: user.idUser,
         name: user.name,
         email: user.email,
-        password: shufflePass,
+        password: user.password,
         birthDate: user.birthDate, 
         healthPlan:user.healthPlan,
         allergy: user.allergy,

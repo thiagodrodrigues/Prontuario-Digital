@@ -19,9 +19,9 @@ export default {
             weight: Sequelize.DataTypes.INTEGER,
             height: Sequelize.DataTypes.INTEGER,
             address: Sequelize.DataTypes.STRING,
-            telephone: Sequelize.DataTypes.INTEGER,
-            emergency: Sequelize.DataTypes.INTEGER,
-            medicines: Sequelize.DataTypes.INTEGER,
+            telephone: Sequelize.DataTypes.STRING,
+            emergency: Sequelize.DataTypes.STRING,
+            medicines: Sequelize.DataTypes.STRING,
             photo: Sequelize.DataTypes.STRING,
             comments: Sequelize.DataTypes.STRING,
             createdAt: Sequelize.DataTypes.DATE,
@@ -30,6 +30,6 @@ export default {
         });
     },
     down: (queryInterface: Sequelize.QueryInterface) => {
-        return queryInterface.dropTable('user');
+        return queryInterface.dropTable('users');
     }
 }

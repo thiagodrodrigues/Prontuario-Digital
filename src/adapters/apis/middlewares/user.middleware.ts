@@ -10,10 +10,13 @@ class UserMiddleware {
     
     async validateUserRepeated(req: express.Request, res: express.Response, next: express.NextFunction) {
         let dataWhere: string = req.body.email;
+        let idUser: number = Number(req.params.idUser);
         const user = await ReadEmailUseCase.execute({
             email: dataWhere
         });
-        if (!user) {
+        if(!user){
+            next();
+        } else if(dataWhere == user.email && idUser == user.idUser) {
             next();
         } else {
             res.status(409).send({error: constantsConfig.USERS.MESSAGES.ERROR.USER_ALREADY_EXISTS.replace('{USER_ID}', String(dataWhere))});
@@ -60,6 +63,24 @@ class UserMiddleware {
                 next();
         } else {
             res.status(400).send({error: constantsConfig.USERS.MESSAGES.ERROR.VOID_BIRTHDATE});
+        }
+    }
+
+    async validateWeightNumber(req: express.Request, res: express.Response, next: express.NextFunction){
+        const weight = await req.body.weight
+        if(typeof weight == "number"){
+            next();
+        } else {
+            res.status(400).send({error: constantsConfig.USERS.MESSAGES.ERROR.WEIGHY_NOT_NUMBER})
+        }
+    }
+
+    async validateHeightNumber(req: express.Request, res: express.Response, next: express.NextFunction){
+        const height = await req.body.height
+        if(typeof height == "number"){
+            next();
+        } else {
+            res.status(400).send({error: constantsConfig.USERS.MESSAGES.ERROR.HEIGHY_NOT_NUMBER})
         }
     }
 

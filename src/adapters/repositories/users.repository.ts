@@ -1,11 +1,12 @@
 import { IDatabaseModel } from "../../infrastructure/persistence/database.model.interface";
 import { UsersEntity } from "../../domain/entities/users/users.entity";
-import { MySqlDatabase } from "../../infrastructure/persistence/mysql/mysql.Database";
+import { MySqlDatabase } from "../../infrastructure/persistence/mysql/mysql.database";
 import { IUsersRepository } from "../../domain/repositories/users.repository.interface";
 import * as Sequelize from 'sequelize'
 import userModel from '../../infrastructure/persistence/mysql/models/user.models.mysql.DB';
 import modelsToEntities from '../../infrastructure/persistence/mysql/helpers/users.modelstoEntities.mysql.DB';
 import entitiesToModels from '../../infrastructure/persistence/mysql/helpers/users.entitiestoModel.mysql.DB';
+import bcrypt from "bcrypt";
 
 export class UsersRepository implements IUsersRepository {
     constructor(
@@ -26,24 +27,22 @@ export class UsersRepository implements IUsersRepository {
 
     async readByEmail(email: string): Promise<UsersEntity | undefined> {
         try{
-            const userGeneral = await this._database.readByWhere(this._modelUser, {
+            const user = await this._database.readByWhere(this._modelUser, {
                 email: email
             });
             
-            return modelsToEntities(userGeneral);
+            return modelsToEntities(user);
         } catch(err){
             throw new Error((err as Error).message);
         }
     }
 
-    async readByWhere(email: string, password: string): Promise<UsersEntity | undefined> {
+    async readByWhere(email: string): Promise<UsersEntity | undefined> {
         try{
-            const userGeneral = await this._database.readByWhere(this._modelUser, {
-                email: email,
-                password: password
+            const user = await this._database.readByWhere(this._modelUser, {
+                email: email
             });
-            
-            return modelsToEntities(userGeneral);
+            return modelsToEntities(user);
         } catch(err){
             throw new Error((err as Error).message);
         }

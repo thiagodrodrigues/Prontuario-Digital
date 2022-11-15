@@ -29,10 +29,37 @@ class UserController {
 	        email: req.body.email,
 	        password: req.body.password,
             birthDate: req.body.birthDate,
-            idUser: Number(req.params.idUser)
+            idUser: Number(req.params.idUser),
+            healthPlan: req.body.healthPlan,
+            allergy: req.body.allergy,
+            bloodType: req.body.bloodType,
+            weight: req.body.weight,
+            height: req.body.height,
+            address: req.body.address,
+            telephone: req.body.telephone,
+            emergency: req.body.emergency,
+            medicines: req.body.medicines,
+            photo: req.body.photo,
+            comments: req.body.comments
         });
         log(userModel);
-        res.status(200).send(userModel);
+        res.status(200).send({
+            idUser: userModel!.idUser,
+            name: userModel!.name,
+	        email: userModel!.email,
+            birthDate: userModel!.birthDate,
+            healthPlan: userModel!.healthPlan,
+            allergy: userModel!.allergy,
+            bloodType: userModel!.bloodType,
+            weight: userModel!.weight,
+            height: userModel!.height,
+            address: userModel!.address,
+            telephone: userModel!.telephone,
+            emergency: userModel!.emergency,
+            medicines: userModel!.medicines,
+            photo: userModel!.photo,
+            comments: userModel!.comments
+        });
     }
 
     async removeUser(req: express.Request, res: express.Response) {
@@ -48,7 +75,7 @@ class UserController {
             res.status(200).send(user);
         } else {
             res.status(401).send({
-                error: constantsConfig.USERS.MESSAGES.ERROR.USER_UNAUTHENTICATED
+                error: constantsConfig.USERS.MESSAGES.ERROR.USER_UNAUTHENTICATEDDD
             });
         }
         
