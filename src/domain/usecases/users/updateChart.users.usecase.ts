@@ -1,18 +1,16 @@
 import { UsersEntity } from "../../entities/users/users.entity";
-import { IChartEntity } from "../../entities/users/chart.entity";
 import { IUsersRepository } from "../../repositories/users.repository.interface";
 import UsersRepository from "../../../adapters/repositories/users.repository";
 import { IUseCase } from "../usecase.interface";
 
-class ReadUsersUseCase implements IUseCase {
+class UpdateUsersChartUseCase implements IUseCase {
     constructor(private _repository: IUsersRepository) {
     }
-    async execute(data: { idUser: number }): Promise<IChartEntity | undefined> {
-        console.log(data)
-        return await this._repository.readById(data.idUser);
+    async execute(data: UsersEntity): Promise<UsersEntity | undefined> {
+        return await this._repository.updateById(data);
     }
 }
 
-export default new ReadUsersUseCase(
+export default new UpdateUsersChartUseCase(
     UsersRepository
 );

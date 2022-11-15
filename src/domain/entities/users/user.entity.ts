@@ -1,20 +1,8 @@
 export interface IUserEntity {
     idUser: number,
-    name: string,
-    email: string,
-    password: string,
-    birthDate?: Date,
-    healthPlan?: string,
-    allergy?: string,
-    bloodType?: string,
-    weight?: number,
-    height?: number,
-    address?: string,
-    telephone?: string,
-    emergency?: string,
-    medicines?: string,
-    photo?: string,
-    comments?: string,
+    name?: string,
+    email?: string,
+    password?: string,
     createdAt?: Date,
     updatedAt?: Date
 }

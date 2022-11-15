@@ -10,18 +10,23 @@ export class UserRoutes extends CommonRoutesConfig {
     }
 
     configureRoutes(): express.Application {
-        this.app.route(`/users`)
+        this.app.route(`/users/requeriment`)
             .post(
                 UserMiddleware.validateRequiredNameBodyFields, // Verifica se o campo Nome foi preenchido
                 UserMiddleware.validateRequiredEmailBodyFields, // Verifica se o campo Email foi preenchido
                 UserMiddleware.validateRequiredPasswordBodyFields, // Verifica se o campo Senha foi preenchido
+                UserMiddleware.validateUserRepeated, // valida se o email utilizado já existe
+                UserController.createUserRequeriment //cadastrar novo usuário
+                ); 
+            
+        this.app.route(`/users/charts/:idUser`)
+            .put(
                 UserMiddleware.validateRequiredBirthDateBodyFields, // Verifica se o campo Data de Nascimento foi preenchido
                 UserMiddleware.validateHeightNumber, // Verifica se o campo altura é um número
                 UserMiddleware.validateWeightNumber, // Verifica se o campo Peso é um número
-                UserMiddleware.validateUserRepeated, // valida se o email utilizado já existe
-                UserController.createUser //cadastrar novo usuário
+                UserController.updateUserChart //cadastrar novo usuário
                 ); 
-                
+                    
         this.app.route(`/login`)
             .post(UserController.login); // logar um usuário
     

@@ -1,15 +1,14 @@
-import bcrypt from 'bcrypt';
-import { IUserEntity } from "../../../../domain/entities/users/user.entity"
+import { UsersEntity } from "../../../../domain/entities/users/users.entity";
+import { IChartEntity } from "../../../../domain/entities/users/chart.entity";
 
 
 
-export default function (user: IUserEntity ){
-    let shufflePass = bcrypt.hashSync(user.password,10)
+export default function (user: IChartEntity ){
     const userGeneral = {
         idUser: user.idUser,
         name: user.name,
         email: user.email,
-        password: shufflePass,
+        password: user.password,
         birthDate: user.birthDate, 
         healthPlan:user.healthPlan,
         allergy: user.allergy,
@@ -23,11 +22,11 @@ export default function (user: IUserEntity ){
         photo: user.photo,
         comments: user.comments,
         createdAt: user.createdAt,
-        updatedAt: user.updatedAt,      
-        
-    }
+        updatedAt: user.updatedAt, 
+        }
+    
 
     return {
-        userGeneral: userGeneral
+        userGeneral: userGeneral,
     };
 }
