@@ -12,7 +12,7 @@ class LoginAuthUseCase implements IUseCase {
     async execute(data: { email: string, password: string }) {
         const user = await this._repository.readByWhere(data.email);
 
-        if(user && bcrypt.compareSync(data.password, user.password)){
+        if(user && bcrypt.compareSync(data.password, user.password!)){
             const token = jwt.sign(user, String(process.env.SECRET_KEY), {
                 expiresIn: '2 days'
             });

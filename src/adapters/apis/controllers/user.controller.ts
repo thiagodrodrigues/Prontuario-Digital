@@ -3,9 +3,11 @@ import createUserUsecase from '../../../domain/usecases/users/create.users.useca
 import readUserUsecase from '../../../domain/usecases/users/read.users.usecase';
 import updateUserUsecase from '../../../domain/usecases/users/update.users.usecase';
 import deleteUserUsecase from '../../../domain/usecases/users/delete.users.usecase';
+import updateChartUsersUsecase from '../../../domain/usecases/users/updateChart.users.usecase';
 import debug from 'debug';
 import loginAuthUsecase from '../../../domain/usecases/users/login.users.usecase';
 import constantsConfig from '../../../infrastructure/config/constants.config';
+import bcrypt from 'bcrypt';
 
 const log: debug.IDebugger = debug('app:users-controller');
 
@@ -17,19 +19,46 @@ class UserController {
         res.status(200).send(user);
     }
 
-    async createUser(req: express.Request, res: express.Response) {
-        const user = await createUserUsecase.execute(req.body);
+    async createUserRequeriment(req: express.Request, res: express.Response) {
+        
+        let shufflePass = bcrypt.hashSync(req.body.password,10)
+        const user = await createUserUsecase.execute({
+            idUser: req.body.idUser,
+            name: req.body.name,
+            email: req.body.email,
+            password: shufflePass,
+            birthDate: undefined,
+            healthPlan: undefined,
+            allergy: undefined,
+            bloodType: undefined,
+            weight: undefined,
+            height: undefined,
+            address: undefined,
+            telephone: undefined,
+            emergency: undefined,
+            medicines: undefined,
+            photo: undefined,
+            comments: undefined
+        });
         log(user);
-        res.status(201).send(user);
+        res.status(201).send({
+            idUser: req.body.idUser,
+            name: req.body.name,
+            email: req.body.email,
+        });
     }
 
-    async updateUser(req: express.Request, res: express.Response) {
-        const userModel = await updateUserUsecase.execute({
-            name: req.body.name,
-	        email: req.body.email,
-	        password: req.body.password,
+    async updateUserChart(req: express.Request, res: express.Response){
+        const user = await readUserUsecase.execute({
+            idUser: Number(req.params.idUser)
+        });
+        console.log(user)
+        const userModel = await updateChartUsersUsecase.execute({
+            idUser: user!.idUser,
+            name: user!.name,
+            email: user!.email,
+            password: user!.password,
             birthDate: req.body.birthDate,
-            idUser: Number(req.params.idUser),
             healthPlan: req.body.healthPlan,
             allergy: req.body.allergy,
             bloodType: req.body.bloodType,
@@ -44,23 +73,39 @@ class UserController {
         });
         log(userModel);
         res.status(200).send({
+            idUser: user!.idUser,
+            name: user!.name,
+            email: user!.email,
+            birthDate: req.body.birthDate,
+            healthPlan: req.body.healthPlan,
+            allergy: req.body.allergy,
+            bloodType: req.body.bloodType,
+            weight: req.body.weight,
+            height: req.body.height,
+            address: req.body.address,
+            telephone: req.body.telephone,
+            emergency: req.body.emergency,
+            medicines: req.body.medicines,
+            photo: req.body.photo,
+            comments: req.body.comments
+        });
+    }
+
+    async updateUser(req: express.Request, res: express.Response) {
+        const userModel = await updateUserUsecase.execute({
+            idUser: Number(req.params.idUser),
+            name: req.body.name,
+	        email: req.body.email,
+	        password: req.body.password,
+        });
+        log(userModel);
+        res.status(200).send({
             idUser: userModel!.idUser,
             name: userModel!.name,
 	        email: userModel!.email,
-            birthDate: userModel!.birthDate,
-            healthPlan: userModel!.healthPlan,
-            allergy: userModel!.allergy,
-            bloodType: userModel!.bloodType,
-            weight: userModel!.weight,
-            height: userModel!.height,
-            address: userModel!.address,
-            telephone: userModel!.telephone,
-            emergency: userModel!.emergency,
-            medicines: userModel!.medicines,
-            photo: userModel!.photo,
-            comments: userModel!.comments
         });
     }
+
 
     async removeUser(req: express.Request, res: express.Response) {
         const User = await deleteUserUsecase.execute({
@@ -72,7 +117,12 @@ class UserController {
     async login(req: express.Request, res: express.Response){
         const user = await loginAuthUsecase.execute(req.body);
         if(user){
-            res.status(200).send(user);
+            res.status(200).send({
+                idUser: user.user.idUser,
+                name: user.user.name,
+                email: user.user.email,
+                token: user.token
+            });
         } else {
             res.status(401).send({
                 error: constantsConfig.USERS.MESSAGES.ERROR.USER_UNAUTHENTICATEDDD
