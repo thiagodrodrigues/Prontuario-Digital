@@ -3,7 +3,7 @@ import { AppointmentEntity } from "../../domain/entities/appointments/appointmen
 import { MySqlDatabase } from "../../infrastructure/persistence/mysql/mysql.database";
 import { IAppointmentsRepository } from "../../domain/repositories/appointments.repository.interface"
 import * as Sequelize from 'sequelize'
-import examsModel from '../../infrastructure/persistence/mysql/models/exams.models.mysql.DB';
+import appointmentModel from '../../infrastructure/persistence/mysql/models/appointment.models.mysql.DB';
 import modelsToEntities from '../../infrastructure/persistence/mysql/helpers/appointment.modeltoEntity.mysql'
 import entitiesToModels from '../../infrastructure/persistence/mysql/helpers/appointments.entitiestoModel.mysql'
 
@@ -11,15 +11,15 @@ import entitiesToModels from '../../infrastructure/persistence/mysql/helpers/app
 export class AppointmentRepository implements IAppointmentsRepository {
   constructor(
       private _database: IDatabaseModel, 
-      private _modelUser: Sequelize.ModelCtor<Sequelize.Model<any, any>>
+      private _modelAppointment: Sequelize.ModelCtor<Sequelize.Model<any, any>>
       ){       
       }
 
   async readById(resourceId: number): Promise<AppointmentEntity | undefined> {
       try{
-          const userGeneral = await this._database.read(this._modelUser, resourceId, {});
+          const appointmentGeneral = await this._database.read(this._modelAppointment, resourceId, {});
           
-          return modelsToEntities(userGeneral);
+          return modelsToEntities(appointmentGeneral);
       } catch(err){
           throw new Error((err as Error).message);
       }
@@ -27,11 +27,11 @@ export class AppointmentRepository implements IAppointmentsRepository {
 
   async readByEmail(email: string): Promise<AppointmentEntity | undefined> {
       try{
-          const userGeneral = await this._database.readByWhere(this._modelUser, {
+          const appointmentGeneral = await this._database.readByWhere(this._modelAppointment, {
               email: email
           });
           
-          return modelsToEntities(userGeneral);
+          return modelsToEntities(appointmentGeneral);
       } catch(err){
           throw new Error((err as Error).message);
       }
@@ -39,45 +39,47 @@ export class AppointmentRepository implements IAppointmentsRepository {
 
   async readByWhere(email: string, password: string): Promise<AppointmentEntity | undefined> {
       try{
-          const userGeneral = await this._database.readByWhere(this._modelUser, {
+          const appointmentGeneral = await this._database.readByWhere(this._modelAppointment, {
               email: email,
               password: password
           });
           
-          return modelsToEntities(userGeneral);
+          return modelsToEntities(appointmentGeneral);
       } catch(err){
           throw new Error((err as Error).message);
       }
   }
 
   async create(resource: AppointmentEntity): Promise<AppointmentEntity> {
-      const { userGeneral }  = entitiesToModels(resource);
-      await this._database.create(this._modelUser, userGeneral);
+      const { appointmentGeneral }  = entitiesToModels(resource);
+      await this._database.create(this._modelAppointment, appointmentGeneral);
       return resource;
   }
 
   async deleteById(resourceId: number): Promise<void> {
-      await this._database.delete(this._modelUser, { idUser: resourceId });
+      await this._database.delete(this._modelAppointment, { idUser: resourceId });
   }
 
   async list(): Promise<AppointmentEntity[]> {
-      const userGeneral = await this._database.list(this._modelUser, {});
-      const clients = userGeneral.map(modelsToEntities);
+      const appointmentGeneral = await this._database.list(this._modelAppointment, {});
+      console.log(`Adapters Repositories`, appointmentGeneral)
+      const clients = appointmentGeneral.map(modelsToEntities);
+      console.log(`Adapters, Repositories`, clients)
       return clients;
   }
 
   async updateById(resource: AppointmentEntity): Promise<AppointmentEntity | undefined> {
       console.log(resource)
-      let examsModel = await this._database.read(this._modelUser, resource.idUser);
+      let examsModel = await this._database.read(this._modelAppointment, resource.idAppointment);
       console.log(`User Model: ${examsModel}`);
-      const { userGeneral } = entitiesToModels(resource);
-      console.log(userGeneral);
-      await this._database.update(examsModel, userGeneral);
+      const { appointmentGeneral } = entitiesToModels(resource);
+      console.log(appointmentGeneral);
+      await this._database.update(examsModel, appointmentGeneral);
       return resource;
   }
 }
 
 export default new AppointmentRepository(
   MySqlDatabase.getInstance(),
-  examsModel
+  appointmentModel
   );

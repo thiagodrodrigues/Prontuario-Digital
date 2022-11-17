@@ -8,6 +8,7 @@ import debug from 'debug';
 import loginAuthUsecase from '../../../domain/usecases/users/login.users.usecase';
 import constantsConfig from '../../../infrastructure/config/constants.config';
 import bcrypt from 'bcrypt';
+import jwt  from 'jsonwebtoken';
 
 const log: debug.IDebugger = debug('app:users-controller');
 
@@ -142,7 +143,7 @@ class UserController {
             });
         } else {
             res.status(401).send({
-                error: constantsConfig.USERS.MESSAGES.ERROR.USER_UNAUTHENTICATEDDD
+                error: constantsConfig.USERS.MESSAGES.ERROR.USER_UNAUTHENTICATED
             });
         }
         

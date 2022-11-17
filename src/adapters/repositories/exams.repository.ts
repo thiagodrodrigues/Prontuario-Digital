@@ -10,15 +10,15 @@ import entitiesToModels from '../../infrastructure/persistence/mysql/helpers/exa
 export class ExamsRepository implements IExamsRepository {
   constructor(
       private _database: IDatabaseModel, 
-      private _modelUser: Sequelize.ModelCtor<Sequelize.Model<any, any>>
+      private _modelExam: Sequelize.ModelCtor<Sequelize.Model<any, any>>
       ){       
       }
 
   async readById(resourceId: number): Promise<ExamEntity | undefined> {
       try{
-          const userGeneral = await this._database.read(this._modelUser, resourceId, {});
+          const examGeneral = await this._database.read(this._modelExam, resourceId, {});
           
-          return modelsToEntities(userGeneral);
+          return modelsToEntities(examGeneral);
       } catch(err){
           throw new Error((err as Error).message);
       }
@@ -26,11 +26,11 @@ export class ExamsRepository implements IExamsRepository {
 
   async readByEmail(email: string): Promise<ExamEntity | undefined> {
       try{
-          const userGeneral = await this._database.readByWhere(this._modelUser, {
+          const examGeneral = await this._database.readByWhere(this._modelExam, {
               email: email
           });
           
-          return modelsToEntities(userGeneral);
+          return modelsToEntities(examGeneral);
       } catch(err){
           throw new Error((err as Error).message);
       }
@@ -38,40 +38,40 @@ export class ExamsRepository implements IExamsRepository {
 
   async readByWhere(email: string, password: string): Promise<ExamEntity | undefined> {
       try{
-          const userGeneral = await this._database.readByWhere(this._modelUser, {
+          const examGeneral = await this._database.readByWhere(this._modelExam, {
               email: email,
               password: password
           });
           
-          return modelsToEntities(userGeneral);
+          return modelsToEntities(examGeneral);
       } catch(err){
           throw new Error((err as Error).message);
       }
   }
 
   async create(resource: ExamEntity): Promise<ExamEntity> {
-      const { userGeneral }  = entitiesToModels(resource);
-      await this._database.create(this._modelUser, userGeneral);
+      const { examGeneral }  = entitiesToModels(resource);
+      await this._database.create(this._modelExam, examGeneral);
       return resource;
   }
 
   async deleteById(resourceId: number): Promise<void> {
-      await this._database.delete(this._modelUser, { idUser: resourceId });
+      await this._database.delete(this._modelExam, { idUser: resourceId });
   }
 
   async list(): Promise<ExamEntity[]> {
-      const userGeneral = await this._database.list(this._modelUser, {});
-      const clients = userGeneral.map(modelsToEntities);
+      const examGeneral = await this._database.list(this._modelExam, {});
+      const clients = examGeneral.map(modelsToEntities);
       return clients;
   }
 
   async updateById(resource: ExamEntity): Promise<ExamEntity | undefined> {
-      console.log(resource)
-      let examsModel = await this._database.read(this._modelUser, resource.idUser);
-      console.log(`User Model: ${examsModel}`);
-      const { userGeneral } = entitiesToModels(resource);
-      console.log(userGeneral);
-      await this._database.update(examsModel, userGeneral);
+      console.log(resource);
+      let examsModel = await this._database.read(this._modelExam, resource.idExams);
+      console.log(`Repositorio, Update 1`, examsModel);
+      const { examGeneral } = entitiesToModels(resource);
+      console.log(`Repositorio, Update 2`, examGeneral);
+      await this._database.update(examsModel, examGeneral);
       return resource;
   }
 }

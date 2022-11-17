@@ -2,7 +2,7 @@ import { IExamEntity } from "../../../../domain/entities/exams/exam.entity"
 
 export default function (exams: IExamEntity ){
    
-    const userGeneral = {
+    const examGeneral = {
         idExams: exams.idExams,
         idUser: exams.idUser,
         exam: exams.exam,
@@ -16,6 +16,6 @@ export default function (exams: IExamEntity ){
     }
 
     return {
-        userGeneral: userGeneral
+        examGeneral: examGeneral
     };
 }

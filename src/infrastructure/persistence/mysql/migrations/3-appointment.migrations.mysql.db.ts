@@ -2,11 +2,11 @@ import * as Sequelize from 'sequelize';
 
 export default {
     up: (queryInterface: Sequelize.QueryInterface) => {
-        return queryInterface.createTable('exams', {
-            idExams: {
+        return queryInterface.createTable('appointments', {
+            idAppointment: {
                 type: Sequelize.DataTypes.INTEGER,
                 primaryKey: true,
-                field: 'idExams',
+                field: 'idAppointment',
                 autoIncrement: true
             },
             idUser: {
@@ -20,11 +20,12 @@ export default {
                   key: 'idUser'
                 }
             },
-            exam: Sequelize.DataTypes.STRING,
             date: Sequelize.DataTypes.DATE, 
-            status:Sequelize.DataTypes.STRING,
-            clinic: Sequelize.DataTypes.STRING,
-            doctor: Sequelize.DataTypes.STRING,
+            doctor:Sequelize.DataTypes.STRING,
+            hospital: Sequelize.DataTypes.STRING,
+            crm: Sequelize.DataTypes.STRING,
+            symptoms: Sequelize.DataTypes.STRING,
+            medicines: Sequelize.DataTypes.STRING,
             comments: Sequelize.DataTypes.STRING,
             createdAt: Sequelize.DataTypes.DATE,
             updatedAt: Sequelize.DataTypes.DATE,
@@ -32,6 +33,6 @@ export default {
         });
     },
     down: (queryInterface: Sequelize.QueryInterface) => {
-        return queryInterface.dropTable('exams');
+        return queryInterface.dropTable('appointments');
     }
 }

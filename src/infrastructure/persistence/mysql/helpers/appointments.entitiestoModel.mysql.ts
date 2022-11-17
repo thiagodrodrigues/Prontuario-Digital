@@ -2,21 +2,21 @@ import { IAppointmentEntity } from "../../../../domain/entities/appointments/app
 
 export default function (appointment: IAppointmentEntity ){
    
-    const userGeneral = {
+    const appointmentGeneral = {
       idAppointment: appointment.idAppointment,
       idUser: appointment.idUser,
       doctor: appointment.doctor,
       hospital: appointment.hospital,
-    crm: appointment.crm,
-    date: appointment.date,
-    symptoms: appointment.symptoms,
-    medicines: appointment.medicines,
-    comments: appointment.comments,
-    createdAt: appointment.createdAt,
-    updatedAt: appointment.updatedAt 
+      crm: appointment.crm,
+      date: appointment.date,
+      symptoms: appointment.symptoms,
+      medicines: appointment.medicines,
+      comments: appointment.comments,
+      createdAt: appointment.createdAt,
+      updatedAt: appointment.updatedAt 
     }
 
     return {
-        userGeneral: userGeneral
+      appointmentGeneral: appointmentGeneral
     };
 }
