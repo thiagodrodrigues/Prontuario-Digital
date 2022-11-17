@@ -57,7 +57,7 @@ export class AppointmentRepository implements IAppointmentsRepository {
   }
 
   async deleteById(resourceId: number): Promise<void> {
-      await this._database.delete(this._modelAppointment, { idUser: resourceId });
+      await this._database.delete(this._modelAppointment, { idAppointment: resourceId });
   }
 
   async list(): Promise<AppointmentEntity[]> {
