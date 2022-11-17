@@ -56,7 +56,7 @@ export class ExamsRepository implements IExamsRepository {
   }
 
   async deleteById(resourceId: number): Promise<void> {
-      await this._database.delete(this._modelExam, { idUser: resourceId });
+      await this._database.delete(this._modelExam, { idExams: resourceId });
   }
 
   async list(): Promise<ExamEntity[]> {
