@@ -3,7 +3,7 @@ import { IExamEntity } from "../../../../domain/entities/exams/exam.entity"
 export default function (exams:any): IExamEntity | undefined {
     if(!exams)
     return
-    let userGeneral: IExamEntity = {
+    let examGeneral: IExamEntity = {
         idExams: exams.idExams,
         idUser: exams.idUser,
         exam: exams.exam,
@@ -17,17 +17,17 @@ export default function (exams:any): IExamEntity | undefined {
     }
 //
     if(exams.logado){
-        (userGeneral as IExamEntity).idExams = exams.idExams;
-        (userGeneral as IExamEntity).idUser = exams.idUser
-        (userGeneral as IExamEntity).exam = exams.exam;
-        (userGeneral as IExamEntity).date = exams.date;
-        (userGeneral as IExamEntity).status = exams.status;
-        (userGeneral as IExamEntity).clinic = exams.clinic;
-        (userGeneral as IExamEntity).doctor = exams.doctor
-        (userGeneral as IExamEntity).comments = exams.comments;
-        (userGeneral as IExamEntity).createdAt = exams.createdAt;
-        (userGeneral as IExamEntity).updatedAt = exams.updatedAt;
+        (examGeneral as IExamEntity).idExams = exams.idExams;
+        (examGeneral as IExamEntity).idUser = exams.idUser
+        (examGeneral as IExamEntity).exam = exams.exam;
+        (examGeneral as IExamEntity).date = exams.date;
+        (examGeneral as IExamEntity).status = exams.status;
+        (examGeneral as IExamEntity).clinic = exams.clinic;
+        (examGeneral as IExamEntity).doctor = exams.doctor
+        (examGeneral as IExamEntity).comments = exams.comments;
+        (examGeneral as IExamEntity).createdAt = exams.createdAt;
+        (examGeneral as IExamEntity).updatedAt = exams.updatedAt;
     }
 
-    return (userGeneral as IExamEntity);
+    return (examGeneral as IExamEntity);
 }

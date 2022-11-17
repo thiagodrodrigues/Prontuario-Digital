@@ -7,6 +7,8 @@ import cors from "cors";
 import{ debug } from "debug";
 
 import { UserRoutes } from "../../adapters/apis/routes/users.routes.config";
+import { ExamRoutes } from "../../adapters/apis/routes/exams.routes.config";
+import { AppointmentRoutes } from "../../adapters/apis/routes/appointment.routes.config";
 import { CommonRoutesConfig } from "../../adapters/apis/routes/common.routes.config";
 import path from "path";
 import bodyParser from "body-parser";
@@ -41,6 +43,8 @@ if(!process.env.DEBUG) {
 app.use(expressWinston.logger(loggerOptions));
 
 routes.push(new UserRoutes(app));
+routes.push(new ExamRoutes(app));
+routes.push(new AppointmentRoutes(app));
 
 
 let runningMessage = `Servidor rodando na porta ${PORT}`;
