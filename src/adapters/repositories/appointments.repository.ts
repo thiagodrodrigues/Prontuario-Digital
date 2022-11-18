@@ -1,6 +1,6 @@
 import { IDatabaseModel } from "../../infrastructure/persistence/database.model.interface";
 import { AppointmentEntity } from "../../domain/entities/appointments/appointments.entity";
-import { MySqlDatabase } from "../../infrastructure/persistence/mysql/mysql.database";
+import { MySqlDatabase } from "../../infrastructure/persistence/mysql/mysql.Database";
 import { IAppointmentsRepository } from "../../domain/repositories/appointments.repository.interface"
 import * as Sequelize from 'sequelize'
 import appointmentModel from '../../infrastructure/persistence/mysql/models/appointment.models.mysql.DB';
@@ -62,18 +62,14 @@ export class AppointmentRepository implements IAppointmentsRepository {
 
   async list(): Promise<AppointmentEntity[]> {
       const appointmentGeneral = await this._database.list(this._modelAppointment, {});
-      console.log(`Adapters Repositories`, appointmentGeneral)
       const clients = appointmentGeneral.map(modelsToEntities);
-      console.log(`Adapters, Repositories`, clients)
       return clients;
   }
 
   async updateById(resource: AppointmentEntity): Promise<AppointmentEntity | undefined> {
-      console.log(resource)
+      if(!resource.idAppointment) throw 'idAppointment não forneceido'
       let examsModel = await this._database.read(this._modelAppointment, resource.idAppointment);
-      console.log(`User Model: ${examsModel}`);
       const { appointmentGeneral } = entitiesToModels(resource);
-      console.log(appointmentGeneral);
       await this._database.update(examsModel, appointmentGeneral);
       return resource;
   }
