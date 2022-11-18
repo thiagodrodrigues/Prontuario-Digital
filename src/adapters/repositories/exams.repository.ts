@@ -1,6 +1,6 @@
 import { IDatabaseModel } from "../../infrastructure/persistence/database.model.interface";
 import { ExamEntity } from "../../domain/entities/exams/exams.entity";
-import { MySqlDatabase } from "../../infrastructure/persistence/mysql/mysql.database";
+import { MySqlDatabase } from "../../infrastructure/persistence/mysql/mysql.Database";
 import { IExamsRepository } from "../../domain/repositories/exams.repository.interface"
 import * as Sequelize from 'sequelize'
 import examsModel from '../../infrastructure/persistence/mysql/models/exams.models.mysql.DB';
@@ -56,7 +56,7 @@ export class ExamsRepository implements IExamsRepository {
   }
 
   async deleteById(resourceId: number): Promise<void> {
-      await this._database.delete(this._modelExam, { idExams: resourceId });
+        await this._database.delete(this._modelExam, { idExams: resourceId });
   }
 
   async list(): Promise<ExamEntity[]> {
@@ -67,6 +67,7 @@ export class ExamsRepository implements IExamsRepository {
 
   async updateById(resource: ExamEntity): Promise<ExamEntity | undefined> {
       console.log(resource);
+      if(!resource.idExams) throw 'idExams não forneceido'
       let examsModel = await this._database.read(this._modelExam, resource.idExams);
       console.log(`Repositorio, Update 1`, examsModel);
       const { examGeneral } = entitiesToModels(resource);

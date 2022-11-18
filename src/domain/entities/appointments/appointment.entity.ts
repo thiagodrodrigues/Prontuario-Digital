@@ -1,5 +1,5 @@
 export interface IAppointmentEntity {
-    idAppointment: number,
+    idAppointment?: number,
     idUser: number,
     doctor: string,
     hospital: string,

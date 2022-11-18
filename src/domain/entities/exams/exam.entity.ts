@@ -1,5 +1,5 @@
 export interface IExamEntity {
-    idExams: number,
+    idExams?: number,
     idUser: number,
     exam: string,
     date: Date,

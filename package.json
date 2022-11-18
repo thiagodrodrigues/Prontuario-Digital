@@ -7,7 +7,8 @@
     "test": "jest",
     "start": "tsc && node --unhandled-rejections=strict -r dotenv/config ./dist/infrastructure/app/app.js",
     "debug": "set DEBUG=* && npm run start",
-    "migrations": "tsc && npx sequelize db:create && npx sequelize db:migrate"
+    "migrations": "tsc && npx sequelize db:create && npx sequelize db:migrate",
+    "mocks": "tsc && node ./dist/infrastructure/persistence/mocks/mocks.js"
   },
   "repository": {
     "type": "git",
@@ -25,6 +26,7 @@
   },
   "homepage": "https://github.com/thiagodrodrigues/Prontuario-Digital#readme",
   "dependencies": {
+    "@faker-js/faker": "^7.6.0",
     "@types/bcrypt": "^5.0.0",
     "@types/cookie-parser": "^1.4.3",
     "bcrypt": "^5.1.0",
