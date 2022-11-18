@@ -7,7 +7,6 @@ class ReadAppointmentUseCase implements IUseCase {
     constructor(private _repository: IAppointmentsRepository) {
     }
     async execute(data: { idAppointment: number }): Promise<AppointmentEntity | undefined> {
-        console.log(data)
         return await this._repository.readById(data.idAppointment);
     }
 }

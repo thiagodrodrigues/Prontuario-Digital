@@ -69,7 +69,7 @@ class AppointmentController {
         const appointment = await readAppointmentUsecase.execute({
             idAppointment: Number(req.params.idAppointment)
         });
-        console.log(appointment)
+        
         const appointmentModel = await updateAppointmentUsecase.execute({
             idUser: decoded.idUser,
             idAppointment: Number(req.params.idAppointment),

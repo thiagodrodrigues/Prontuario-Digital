@@ -8,7 +8,7 @@ export default function (exams:any): IExamEntity | undefined {
         idUser: exams.idUser,
         exam: exams.exam,
         date: exams.date,
-        status: exams.date,
+        status: exams.status,
         clinic: exams.clinic,
         doctor: exams.doctor,
         comments: exams.comments,

@@ -62,19 +62,14 @@ export class AppointmentRepository implements IAppointmentsRepository {
 
   async list(): Promise<AppointmentEntity[]> {
       const appointmentGeneral = await this._database.list(this._modelAppointment, {});
-      console.log(`Adapters Repositories`, appointmentGeneral)
       const clients = appointmentGeneral.map(modelsToEntities);
-      console.log(`Adapters, Repositories`, clients)
       return clients;
   }
 
   async updateById(resource: AppointmentEntity): Promise<AppointmentEntity | undefined> {
-      console.log(resource)
       if(!resource.idAppointment) throw 'idAppointment não forneceido'
       let examsModel = await this._database.read(this._modelAppointment, resource.idAppointment);
-      console.log(`User Model: ${examsModel}`);
       const { appointmentGeneral } = entitiesToModels(resource);
-      console.log(appointmentGeneral);
       await this._database.update(examsModel, appointmentGeneral);
       return resource;
   }
