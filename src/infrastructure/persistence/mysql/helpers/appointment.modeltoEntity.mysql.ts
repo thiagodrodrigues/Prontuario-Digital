@@ -6,12 +6,11 @@ export default function (appointment:any): IAppointmentEntity | undefined {
   let appointmentGeneral: IAppointmentEntity = {
     idAppointment: appointment.idAppointment,
     idUser: appointment.idUser,
+    medicalSpecialties: appointment.medicalSpecialties,
     doctor: appointment.doctor,
     hospital: appointment.hospital,
-    crm: appointment.crm,
     date: appointment.date,
-    symptoms: appointment.symptoms,
-    medicines: appointment.medicines,
+    diagnosis: appointment.diagnosis,
     comments: appointment.comments,
     createdAt: appointment.createdAt,
     updatedAt: appointment.updatedAt 
@@ -19,13 +18,12 @@ export default function (appointment:any): IAppointmentEntity | undefined {
 //
   if(appointment.logado){
       (appointmentGeneral as IAppointmentEntity).idAppointment = appointment.idAppointment;
-      (appointmentGeneral as IAppointmentEntity).idUser = appointment.idUser
+      (appointmentGeneral as IAppointmentEntity).idUser = appointment.idUser;
+      (appointmentGeneral as IAppointmentEntity).medicalSpecialties = appointment.medicalSpecialties;
       (appointmentGeneral as IAppointmentEntity).doctor = appointment.doctor;
       (appointmentGeneral as IAppointmentEntity).hospital = appointment.hospital;
-      (appointmentGeneral as IAppointmentEntity).crm = appointment.crm;
       (appointmentGeneral as IAppointmentEntity).date = appointment.date;
-      (appointmentGeneral as IAppointmentEntity).symptoms = appointment.symptoms
-      (appointmentGeneral as IAppointmentEntity).medicines = appointment.medicines
+      (appointmentGeneral as IAppointmentEntity).diagnosis = appointment.diagnosis;
       (appointmentGeneral as IAppointmentEntity).comments = appointment.comments;
       (appointmentGeneral as IAppointmentEntity).createdAt = appointment.createdAt;
       (appointmentGeneral as IAppointmentEntity).updatedAt = appointment.updatedAt;

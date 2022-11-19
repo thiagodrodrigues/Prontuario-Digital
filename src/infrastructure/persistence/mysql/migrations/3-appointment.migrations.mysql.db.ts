@@ -20,16 +20,14 @@ export default {
                   key: 'idUser'
                 }
             },
-            date: Sequelize.DataTypes.DATE, 
-            doctor:Sequelize.DataTypes.STRING,
+            medicalSpecialties: Sequelize.DataTypes.STRING,
+            doctor: Sequelize.DataTypes.STRING,
             hospital: Sequelize.DataTypes.STRING,
-            crm: {type:Sequelize.DataTypes.INTEGER, allowNull: true},
-            symptoms: {type:Sequelize.DataTypes.STRING, allowNull: true},
-            medicines: {type:Sequelize.DataTypes.STRING, allowNull: true},
-            comments: {type:Sequelize.DataTypes.STRING, allowNull: true},
+            date: Sequelize.DataTypes.DATE,
+            diagnosis: Sequelize.DataTypes.STRING,
+            comments: Sequelize.DataTypes.STRING,
             createdAt: Sequelize.DataTypes.DATE,
             updatedAt: Sequelize.DataTypes.DATE,
-            
         });
     },
     down: (queryInterface: Sequelize.QueryInterface) => {

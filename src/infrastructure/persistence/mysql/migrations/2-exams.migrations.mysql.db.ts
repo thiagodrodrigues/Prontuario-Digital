@@ -22,13 +22,12 @@ export default {
             },
             exam: Sequelize.DataTypes.STRING,
             date: Sequelize.DataTypes.DATE, 
-            status:Sequelize.DataTypes.STRING,
+            diagnosis: Sequelize.DataTypes.STRING,
             clinic: Sequelize.DataTypes.STRING,
             doctor: Sequelize.DataTypes.STRING,
             comments: {type:Sequelize.DataTypes.STRING, allowNull: true},
             createdAt: Sequelize.DataTypes.DATE,
             updatedAt: Sequelize.DataTypes.DATE,
-            
         });
     },
     down: (queryInterface: Sequelize.QueryInterface) => {
