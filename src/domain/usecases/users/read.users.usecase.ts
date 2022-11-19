@@ -8,7 +8,6 @@ class ReadUsersUseCase implements IUseCase {
     constructor(private _repository: IUsersRepository) {
     }
     async execute(data: { idUser: number }): Promise<IChartEntity | undefined> {
-        console.log(data)
         return await this._repository.readById(data.idUser);
     }
 }

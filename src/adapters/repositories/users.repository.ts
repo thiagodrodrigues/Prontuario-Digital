@@ -1,6 +1,6 @@
 import { IDatabaseModel } from "../../infrastructure/persistence/database.model.interface";
 import { UsersEntity } from "../../domain/entities/users/users.entity";
-import { MySqlDatabase } from "../../infrastructure/persistence/mysql/mysql.database";
+import { MySqlDatabase } from "../../infrastructure/persistence/mysql/mysql.Database";
 import { IUsersRepository } from "../../domain/repositories/users.repository.interface";
 import * as Sequelize from 'sequelize'
 import userModel from '../../infrastructure/persistence/mysql/models/user.models.mysql.DB';
@@ -68,7 +68,8 @@ export class UsersRepository implements IUsersRepository {
     }
 
     async updateById(resource: UsersEntity): Promise<UsersEntity | undefined> {
-        
+
+        if(!resource.idUser) throw 'IdUser não forneceido'
         let userModel = await this._database.read(this._modelUser, resource.idUser);
         
         const { userGeneral } = entitiesToModels(resource);

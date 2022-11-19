@@ -1,5 +1,5 @@
 import * as Sequelize from "sequelize";
-import { MySqlDatabase } from "../mysql.database";
+import { MySqlDatabase } from "../mysql.Database";
 
 export default MySqlDatabase.getInstance().createModel('users',{
     idUser: {

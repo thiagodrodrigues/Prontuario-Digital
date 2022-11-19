@@ -68,7 +68,7 @@ class ExamController {
         const exam = await readExamUsecase.execute({
             idExams: Number(req.params.idExams)
         });
-        console.log(`Controller Update`, exam)
+        
         const examModel = await updateExamUsecase.execute({
             idUser: decoded.idUser,
             idExams: Number(req.params.idExams),

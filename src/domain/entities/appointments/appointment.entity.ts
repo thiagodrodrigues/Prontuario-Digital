@@ -1,5 +1,5 @@
 export interface IAppointmentEntity {
-    idAppointment: number,
+    idAppointment?: number,
     idUser: number,
     medicalSpecialties: string, // especialidade médica (ex: cardiologista)
     doctor: string, // médico

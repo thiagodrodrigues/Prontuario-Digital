@@ -7,7 +7,6 @@ class ReadExamUseCase implements IUseCase {
     constructor(private _repository: IExamsRepository) {
     }
     async execute(data: { idExams: number }): Promise<ExamEntity | undefined> {
-        console.log(data)
         return await this._repository.readById(data.idExams);
     }
 }

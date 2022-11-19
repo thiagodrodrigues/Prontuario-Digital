@@ -69,7 +69,6 @@ class UserController {
         const user = await readUserUsecase.execute({
             idUser: Number(req.params.idUser)
         });
-        console.log(user)
         const userModel = await updateChartUsersUsecase.execute({
             idUser: user!.idUser,
             name: user!.name,
