@@ -14,3 +14,4 @@ class ListUsersUseCase implements IUseCase {
 export default new ListUsersUseCase(
     UsersRepository
 );
+

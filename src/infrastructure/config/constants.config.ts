@@ -29,7 +29,10 @@ export default {
     EXAMS: {
         MESSAGES: {
             ERROR: {
-                REQUIRE_LOGIN: `Faça login para continuar.`
+                REQUIRE_LOGIN: `Faça login para continuar.`,
+                VOID_EXAM: `O campo 'Exame' deve ser preenchido`,
+                VOID_DATE: `O campo 'Data' deve ser preenchido`,
+                VOID_CLINIC: `O campo 'Local' deve ser preenchido`
             }
         }
     }

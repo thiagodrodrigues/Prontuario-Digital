@@ -10,7 +10,7 @@ class UserMiddleware {
         if(req.body.exam) {
                 next();
         } else {
-            res.status(400).send({error: constantsConfig.USERS.MESSAGES.ERROR.VOID_NAME});
+            res.status(400).send({error: constantsConfig.EXAMS.MESSAGES.ERROR.VOID_EXAM});
         }
     }
 
@@ -18,23 +18,16 @@ class UserMiddleware {
         if(req.body.date) {
                 next();
         } else {
-            res.status(400).send({error: constantsConfig.USERS.MESSAGES.ERROR.VOID_NAME});
+            res.status(400).send({error: constantsConfig.EXAMS.MESSAGES.ERROR.VOID_DATE});
         }
     }
 
-    async validateRequiredStatusBodyFields(req: express.Request, res: express.Response, next: express.NextFunction){
-        if(req.body.status) {
-                next();
-        } else {
-            res.status(400).send({error: constantsConfig.USERS.MESSAGES.ERROR.VOID_NAME});
-        }
-    }
 
     async validateRequiredClinicBodyFields(req: express.Request, res: express.Response, next: express.NextFunction){
         if(req.body.clinic) {
                 next();
         } else {
-            res.status(400).send({error: constantsConfig.USERS.MESSAGES.ERROR.VOID_NAME});
+            res.status(400).send({error: constantsConfig.EXAMS.MESSAGES.ERROR.VOID_CLINIC});
         }
     }
 

@@ -1,9 +1,10 @@
 import express from 'express';
-import listExamUsecase from '../../../domain/usecases/exams/list.exam.usecase';
+import listExamUsecase from '../../../domain/usecases/exams/listExamById.exam.usecase';
 import readExamUsecase from '../../../domain/usecases/exams/read.exam.usecase';
 import deleteExamUsecase from '../../../domain/usecases/exams/delete.exam.usecase';
 import createExamUsecase from '../../../domain/usecases/exams/create.exam.usecase';
 import updateExamUsecase from '../../../domain/usecases/exams/update.exam.usecase';
+import ListExamById from '../../../domain/usecases/exams/listExamById.exam.usecase';
 import debug from 'debug';
 import constantsConfig from '../../../infrastructure/config/constants.config';
 import jwt  from 'jsonwebtoken';
@@ -12,14 +13,17 @@ const log: debug.IDebugger = debug('app:exam-controller');
 
 class ExamController {
     
-    async listExam(req: express.Request, res: express.Response){
-        const exam = await listExamUsecase.execute();
-        res.status(200).send(exam);
-    }
 
     async getExamById(req: express.Request, res: express.Response) {
         const exam = await readExamUsecase.execute({
             idExams: Number(req.params.idExams)
+        });
+        res.status(200).send(exam);
+    }
+
+    async listExamById(req: express.Request, res: express.Response) {
+        const exam = await ListExamById.execute({
+            idUser: Number(req.params.idUser)
         });
         res.status(200).send(exam);
     }

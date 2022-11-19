@@ -12,11 +12,10 @@ export class ExamRoutes extends CommonRoutesConfig {
     configureRoutes(): express.Application {
         this.app.route(`/exam/:idUser`)
                 .all(LoginAuthMiddleware.checkAuth) // verifica se o usuário está logado e retorna o idUser
-                .get(ExamController.listExam) // lista todas as consultas do usuário logado
+                .get(ExamController.listExamById) // lista todas as consultas do usuário logado
                 .post(
                     ExamMiddleware.validateRequiredExamBodyFields, // valida se o campo Exame foi preenchido
                     ExamMiddleware.validateRequiredDateBodyFields, // Verifica se o campo Data foi preenchido
-                    ExamMiddleware.validateRequiredStatusBodyFields, // Verifica se o campo Status foi preenchido
                     ExamMiddleware.validateRequiredClinicBodyFields, // Verifica se o campo Clínica foi preenchido
                     ExamController.createExam //cadastrar nova consulta
                     ); 
@@ -28,7 +27,6 @@ export class ExamRoutes extends CommonRoutesConfig {
             .put(
                 ExamMiddleware.validateRequiredExamBodyFields, // valida se o campo Exame foi preenchido
                 ExamMiddleware.validateRequiredDateBodyFields, // Verifica se o campo Data foi preenchido
-                ExamMiddleware.validateRequiredStatusBodyFields, // Verifica se o campo Status foi preenchido
                 ExamMiddleware.validateRequiredClinicBodyFields, // Verifica se o campo Clínica foi preenchido
                 ExamController.updateExam // atualizar uma consulta específica
                 ) 

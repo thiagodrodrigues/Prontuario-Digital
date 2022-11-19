@@ -60,11 +60,18 @@ export class AppointmentRepository implements IAppointmentsRepository {
       await this._database.delete(this._modelAppointment, { idAppointment: resourceId });
   }
 
-  async list(): Promise<AppointmentEntity[]> {
-      const appointmentGeneral = await this._database.list(this._modelAppointment, {});
-      const clients = appointmentGeneral.map(modelsToEntities);
-      return clients;
-  }
+  async list(idUser: number): Promise<AppointmentEntity[]> {
+    try{
+
+    const examGeneral = await this._database.listById(this._modelAppointment, {
+        idUser: idUser
+        });
+        const clients = examGeneral.map(modelsToEntities);
+        return clients;
+    } catch(err){
+        throw new Error((err as Error).message);
+    }
+    }
 
   async updateById(resource: AppointmentEntity): Promise<AppointmentEntity | undefined> {
       if(!resource.idAppointment) throw 'idAppointment não forneceido'
