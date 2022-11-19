@@ -8,7 +8,7 @@ export default function (exams:any): IExamEntity | undefined {
         idUser: exams.idUser,
         exam: exams.exam,
         date: exams.date,
-        status: exams.date,
+        diagnosis: exams.diagnosis,
         clinic: exams.clinic,
         doctor: exams.doctor,
         comments: exams.comments,
@@ -21,7 +21,7 @@ export default function (exams:any): IExamEntity | undefined {
         (examGeneral as IExamEntity).idUser = exams.idUser
         (examGeneral as IExamEntity).exam = exams.exam;
         (examGeneral as IExamEntity).date = exams.date;
-        (examGeneral as IExamEntity).status = exams.status;
+        (examGeneral as IExamEntity).diagnosis = exams.diagnosis;
         (examGeneral as IExamEntity).clinic = exams.clinic;
         (examGeneral as IExamEntity).doctor = exams.doctor
         (examGeneral as IExamEntity).comments = exams.comments;

@@ -7,7 +7,7 @@ export default function (exams: IExamEntity ){
         idUser: exams.idUser,
         exam: exams.exam,
         date: exams.date,
-        status: exams.date,
+        diagnosis: exams.diagnosis,
         clinic: exams.clinic,
         doctor: exams.doctor,
         comments: exams.comments,

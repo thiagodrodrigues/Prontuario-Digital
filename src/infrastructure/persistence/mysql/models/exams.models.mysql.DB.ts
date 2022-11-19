@@ -21,13 +21,12 @@ export default MySqlDatabase.getInstance().createModel('exams', {
     },
     exam: Sequelize.DataTypes.STRING,
     date: Sequelize.DataTypes.DATE, 
-    status:Sequelize.DataTypes.STRING,
+    diagnosis: Sequelize.DataTypes.STRING,
     clinic: Sequelize.DataTypes.STRING,
     doctor: Sequelize.DataTypes.STRING,
     comments: Sequelize.DataTypes.STRING,
     createdAt: Sequelize.DataTypes.DATE,
     updatedAt: Sequelize.DataTypes.DATE,
-  
 });
 
 

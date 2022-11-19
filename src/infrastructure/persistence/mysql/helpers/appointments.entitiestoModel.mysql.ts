@@ -5,12 +5,11 @@ export default function (appointment: IAppointmentEntity ){
     const appointmentGeneral = {
       idAppointment: appointment.idAppointment,
       idUser: appointment.idUser,
+      medicalSpecialties: appointment.medicalSpecialties,
       doctor: appointment.doctor,
       hospital: appointment.hospital,
-      crm: appointment.crm,
       date: appointment.date,
-      symptoms: appointment.symptoms,
-      medicines: appointment.medicines,
+      diagnosis: appointment.diagnosis,
       comments: appointment.comments,
       createdAt: appointment.createdAt,
       updatedAt: appointment.updatedAt 

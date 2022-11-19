@@ -1,12 +1,12 @@
 export interface IExamEntity {
     idExams: number,
     idUser: number,
-    exam: string,
-    date: Date,
-    status: string,
-    clinic: string,
-    doctor: string,
-    comments?: string,
+    exam: string, // Exame
+    date: Date, // Data
+    diagnosis: string, // diagnóstico 
+    clinic: string, // Local
+    doctor: string, // médico
+    comments?: string, // Observações
     createdAt?: Date,
     updatedAt?: Date
 }

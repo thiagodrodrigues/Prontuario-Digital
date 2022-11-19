@@ -19,16 +19,14 @@ export default MySqlDatabase.getInstance().createModel('appointments',{
           key: 'idUser'
         }
     },
-    date: Sequelize.DataTypes.DATE, 
-    doctor:Sequelize.DataTypes.STRING,
+    medicalSpecialties: Sequelize.DataTypes.STRING,
+    doctor: Sequelize.DataTypes.STRING,
     hospital: Sequelize.DataTypes.STRING,
-    crm: Sequelize.DataTypes.STRING,
-    symptoms: Sequelize.DataTypes.STRING,
-    medicines: Sequelize.DataTypes.STRING,
+    date: Sequelize.DataTypes.DATE,
+    diagnosis: Sequelize.DataTypes.STRING,
     comments: Sequelize.DataTypes.STRING,
     createdAt: Sequelize.DataTypes.DATE,
     updatedAt: Sequelize.DataTypes.DATE,
-  
 })
 
 
