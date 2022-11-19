@@ -1,6 +1,6 @@
 import { IDatabaseModel } from "../../infrastructure/persistence/database.model.interface";
 import { AppointmentEntity } from "../../domain/entities/appointments/appointments.entity";
-import { MySqlDatabase } from "../../infrastructure/persistence/mysql/mysql.Database";
+import { MySqlDatabase } from "../../infrastructure/persistence/mysql/mysql.database";
 import { IAppointmentsRepository } from "../../domain/repositories/appointments.repository.interface"
 import * as Sequelize from 'sequelize'
 import appointmentModel from '../../infrastructure/persistence/mysql/models/appointment.models.mysql.DB';

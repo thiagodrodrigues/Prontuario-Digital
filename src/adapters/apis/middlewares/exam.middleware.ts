@@ -2,7 +2,7 @@ import express from 'express';
 import debug from 'debug';
 import constantsConfig from '../../../infrastructure/config/constants.config';
 
-const log: debug.IDebugger = debug('app:user-middleware');
+const log: debug.IDebugger = debug('app:exam-middleware');
 
 class UserMiddleware {
     

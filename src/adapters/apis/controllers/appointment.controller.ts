@@ -40,12 +40,11 @@ class AppointmentController {
         const appointment = await createAppointmentUsecase.execute({
             idUser: decoded.idUser,
             idAppointment: req.body.idAppointment,
-            date: req.body.date,
+            medicalSpecialties: req.body.medicalSpecialties,
             doctor: req.body.doctor,
             hospital: req.body.hospital,
-            crm: req.body.crm,
-            symptoms: req.body.symptoms,
-            medicines: req.body.medicines,
+            date: req.body.date,
+            diagnosis: req.body.diagnosis,
             comments: req.body.comments
         });
         log(appointment);
@@ -73,12 +72,11 @@ class AppointmentController {
         const appointmentModel = await updateAppointmentUsecase.execute({
             idUser: decoded.idUser,
             idAppointment: Number(req.params.idAppointment),
-            date: req.body.date,
+            medicalSpecialties: req.body.medicalSpecialties,
             doctor: req.body.doctor,
             hospital: req.body.hospital,
-            crm: req.body.crm,
-            symptoms: req.body.symptoms,
-            medicines: req.body.medicines,
+            date: req.body.date,
+            diagnosis: req.body.diagnosis,
             comments: req.body.comments
         });
         log(appointmentModel);

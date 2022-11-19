@@ -42,7 +42,7 @@ class ExamController {
             idExams: req.body.idExams,
             exam: req.body.exam,
             date: req.body.date,
-            status: req.body.status,
+            diagnosis: req.body.diagnosis,
             clinic: req.body.clinic,
             doctor: req.body.doctor,
             comments: req.body.comments
@@ -74,7 +74,7 @@ class ExamController {
             idExams: Number(req.params.idExams),
             exam: req.body.exam,
             date: req.body.date,
-            status: req.body.status,
+            diagnosis: req.body.diagnosis,
             clinic: req.body.clinic,
             doctor: req.body.doctor,
             comments: req.body.comments
