@@ -3,9 +3,9 @@ export interface IExamEntity {
     idUser: number,
     exam: string, // Exame
     date: Date, // Data
-    diagnosis: string, // diagnóstico 
+    diagnosis?: string, // diagnóstico 
     clinic: string, // Local
-    doctor: string, // médico
+    doctor?: string, // médico
     comments?: string, // Observações
     createdAt?: Date,
     updatedAt?: Date

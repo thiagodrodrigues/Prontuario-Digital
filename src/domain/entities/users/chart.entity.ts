@@ -21,6 +21,7 @@ export interface IChartEntity extends IUserEntity {
     familialDisease?: string, //* Histórico familiar
     treatment?: string, //* tratamentos médicos
     allergy?: string, // > alergias
+    pregnant?: string, // grávida
     medicines?: string, // medicamentos
     disease?: string, //* histórico de doenças
     bloodType?: string, // > tipo sanguíneo

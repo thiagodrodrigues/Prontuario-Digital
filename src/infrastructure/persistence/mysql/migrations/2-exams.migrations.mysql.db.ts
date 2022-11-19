@@ -25,7 +25,7 @@ export default {
             diagnosis: Sequelize.DataTypes.STRING,
             clinic: Sequelize.DataTypes.STRING,
             doctor: Sequelize.DataTypes.STRING,
-            comments: {type:Sequelize.DataTypes.STRING, allowNull: true},
+            comments: Sequelize.DataTypes.STRING,
             createdAt: Sequelize.DataTypes.DATE,
             updatedAt: Sequelize.DataTypes.DATE,
         });

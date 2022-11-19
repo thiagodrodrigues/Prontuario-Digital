@@ -32,6 +32,7 @@ export default function (user:any): IChartEntity | undefined {
         familialDisease: user.familialDisease,
         treatment: user.treatment,
         allergy: user.allergy,
+        pregnant: user.pregnant,
         medicines: user.medicines,
         disease: user.disease,
         bloodType: user.bloodType,
