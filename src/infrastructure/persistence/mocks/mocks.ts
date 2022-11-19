@@ -31,41 +31,40 @@ class Mocks {
     } 
 
     async createExams(){
-        const user = await this.createUsers();
-        if(user){
+        // const user = await this.createUsers();
+        // if(user){
         let countExams = 0;
         for(countExams = 0; countExams < this._exams.length; countExams++){
             await createExamUsecase.execute(this._exams[countExams]);
         }
         return {
             createdExames: countExams
-        }};
+    //    }
+    };
     }
     async createAppointment(){
-        const user = await this.createUsers();
-        if(user){
+        // const user = await this.createUsers();
+        // if(user){
         let countAppointment = 0;
         for(countAppointment = 0; countAppointment < this._appointment.length; countAppointment++){
             await createAppointmentUsecase.execute(this._appointment[countAppointment]);            
         }
         return {
             createdAppointment: countAppointment
-        }};
+       // }
+    };
     }
 }
 
-const mocks = new Mocks(new FakerMocks);
+const execute = async ()=>{
+    const mocks = new Mocks(new FakerMocks);
 
-mocks.createUsers().then((result) => {
-    console.log(result);
-});
+    const totalUsers = await mocks.createUsers();
+    console.log(totalUsers);
+    const totalExams = await mocks.createExams();
+    console.log(totalExams);
+    const totalAppointment = await mocks.createAppointment();
+    console.log(totalAppointment);
+}
 
-mocks.createExams().then((result) => {
-    console.log(result);
-});
-
-mocks.createAppointment().then((result) => {
-    console.log(result);
-});
-
-
+execute();

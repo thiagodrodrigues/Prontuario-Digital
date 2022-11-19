@@ -14,7 +14,6 @@ export class AppointmentRoutes extends CommonRoutesConfig {
                 .all(LoginAuthMiddleware.checkAuth) // verifica se o usuário está logado e retorna o idUser
                 .get(appointmentController.listAppointment) // lista todas as consultas do usuário logado
                 .post(
-                    AppointmentMiddleware.validateCrmNumber, // valida se o CRM do médico está em formato numérico
                     AppointmentMiddleware.validateRequiredDateBodyFields, // Verifica se o campo Data foi preenchido
                     AppointmentMiddleware.validateRequiredDoctorBodyFields, // Verifica se o campo Médico foi preenchido
                     AppointmentMiddleware.validateRequiredHospitalBodyFields, // Verifica se o campo Hospital foi preenchido
@@ -25,7 +24,6 @@ export class AppointmentRoutes extends CommonRoutesConfig {
             .all(LoginAuthMiddleware.checkAuth) // verifica se o usuário está logado e retorna o idUser
             .get(appointmentController.getAppointmentById) // visualizar uma consulta específica
             .put(
-                AppointmentMiddleware.validateCrmNumber, // valida se o CRM do médico está em formato numérico
                 AppointmentMiddleware.validateRequiredDateBodyFields, // Verifica se o campo Data foi preenchido
                 AppointmentMiddleware.validateRequiredDoctorBodyFields, // Verifica se o campo Médico foi preenchido
                 AppointmentMiddleware.validateRequiredHospitalBodyFields, // Verifica se o campo Hospital foi preenchido
