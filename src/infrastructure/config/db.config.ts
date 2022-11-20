@@ -6,9 +6,22 @@ const dbConfig = {
     password: process.env.DB_PASS,
     port: process.env.DB_PORT,
     database: process.env.DB_NAME,
-    dialect: 'mysql',
+    dialect: 'mysql'
 }
 
+if(process.env.NODE_ENV === 'production'){
+    Object.assign(
+        dbConfig,
+        {
+            dialectOptions: {
+                ssl: {
+                    require: true,
+                    rejectUnauthorized: false
+                }
+            }
+        }
+    )
+}
 
 export default dbConfig;
 

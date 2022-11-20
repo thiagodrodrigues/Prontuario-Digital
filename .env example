@@ -1,0 +1,37 @@
+##           #######      ######        ###       ##       
+##          ##     ##    ##    ##      ## ##      ##       
+##          ##     ##    ##           ##   ##     ##       
+##          ##     ##    ##          ##     ##    ##       
+##          ##     ##    ##          #########    ##       
+##          ##     ##    ##    ##    ##     ##    ##       
+########     #######      ######     ##     ##    ######## 
+
+DB_HOST=localhost
+DB_USER=root
+DB_PASS=sua senha
+DB_PORT=3306
+DB_NAME=prontuario
+
+SECRET_KEY=mzjDkCNvbvGv1TXkl6u76LtOXfR63TRN
+
+PORT=8000
+
+
+########     ########    ########     ######## 
+##     ##    ##          ##     ##    ##       
+##     ##    ##          ##     ##    ##       
+########     ######      ##     ##    ######   
+##   ##      ##          ##     ##    ##       
+##    ##     ##          ##     ##    ##       
+##     ##    ########    ########     ######## 
+
+
+# DB_HOST=localhost
+# DB_USER=root
+# DB_PASS=root
+# DB_PORT=3306
+# DB_NAME=prontuario
+
+# SECRET_KEY=mzjDkCNvbvGv1TXkl6u76LtOXfR63TRN
+
+# PORT=80
