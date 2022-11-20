@@ -139,7 +139,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
    <td align="center"> <img src="https://avatars.githubusercontent.com/u/103468538?v=4" width=175/></br> Fábio Volpi </br><a href="https://github.com/volpifabio"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg" height="30" width="30" alt="github-logo" /> </a> <a href=""> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-plain.svg" height="30" width="30" alt="linkedin-logo" /> </a>
    </td>
      
-   <td align="center"> <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" width=175/></br> Gabriel da Silva </br><a href="https://github.com/"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg" height="30" width="30" alt="github-logo" /> </a> <a href=""> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-plain.svg" height="30" width="30" alt="linkedin-logo" /> </a>
+   <td align="center"> <img src="https://ca.slack-edge.com/T03GMFFKYLW-U03N33RTGKA-f71c799e9832-512" width=175/></br> Gabriel da Silva </br><a href="https://github.com/"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg" height="30" width="30" alt="github-logo" /> </a> <a href=""> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-plain.svg" height="30" width="30" alt="linkedin-logo" /> </a>
    </td>
      
    <td align="center"> <img src="https://avatars.githubusercontent.com/u/109252959?v=4" width=175/></br> Renan Jello </br><a href="https://github.com/RenanJello"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg" height="30" width="30" alt="github-logo" /> </a> <a href=""> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-plain.svg" height="30" width="30" alt="linkedin-logo" /> </a>
@@ -165,13 +165,13 @@ As seguintes ferramentas foram usadas na construção do projeto:
 <table align=center>
   <tr>
      
-   <td align="center"> <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" width=175/></br> Davi Faria </br><a href="https://github.com/"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg" height="30" width="30" alt="github-logo" /> </a> <a href=""> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-plain.svg" height="30" width="30" alt="linkedin-logo" /> </a>
+   <td align="center"> <img src="https://ca.slack-edge.com/T03GMFFKYLW-U03LEL9TG7L-bc0f20ac78aa-512" width=175/></br> Davi Faria </br><a href="https://github.com/"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg" height="30" width="30" alt="github-logo" /> </a> <a href=""> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-plain.svg" height="30" width="30" alt="linkedin-logo" /> </a>
    </td>
     
    <td align="center"> <img src="https://ca.slack-edge.com/T03GMFFKYLW-U03M5PA1KK3-f893c1e7efd3-512" width=175/></br> Jonas Lobo </br><a href="https://github.com/"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg" height="30" width="30" alt="github-logo" /> </a> <a href="https://www.linkedin.com/in/jonaslobo/"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-plain.svg" height="30" width="30" alt="linkedin-logo" /> </a>
    </td>
     
-   <td align="center"> <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" width=175/></br> Edson Previatti </br><a href="https://github.com/"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg" height="30" width="30" alt="github-logo" /> </a> <a href=""> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-plain.svg" height="30" width="30" alt="linkedin-logo" /> </a>
+   <td align="center"> <img src="https://ca.slack-edge.com/T03GMFFKYLW-U03LCL8N52T-c34f19aed471-512" width=175/></br> Edson Previatti </br><a href="https://github.com/"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg" height="30" width="30" alt="github-logo" /> </a> <a href=""> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-plain.svg" height="30" width="30" alt="linkedin-logo" /> </a>
    </td>
      
   </tr>
