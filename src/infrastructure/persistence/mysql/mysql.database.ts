@@ -108,3 +108,4 @@ export class MySqlDatabase implements IDatabaseModel {
         }
     }
 }
+
