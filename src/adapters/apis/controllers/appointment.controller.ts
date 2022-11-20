@@ -13,7 +13,9 @@ const log: debug.IDebugger = debug('app:appointment-controller');
 class AppointmentController {
     
     async listAppointment(req: express.Request, res: express.Response){
-        const appointment = await listAppointmentUsecase.execute();
+        const appointment = await listAppointmentUsecase.execute({
+            idUser: Number(req.params.idUser)
+        });
         res.status(200).send(appointment);
     }
 

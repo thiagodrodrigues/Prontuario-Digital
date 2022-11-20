@@ -24,6 +24,20 @@ export class ExamsRepository implements IExamsRepository {
       }
   }
 
+  
+  async listById(idUser: number): Promise<ExamEntity[]> {
+    try{
+
+    const examGeneral = await this._database.listById(this._modelExam, {
+        idUser: idUser
+    });
+        const clients = examGeneral.map(modelsToEntities);
+        return clients;
+    } catch(err){
+        throw new Error((err as Error).message);
+    }
+    }
+
   async readByEmail(email: string): Promise<ExamEntity | undefined> {
       try{
           const examGeneral = await this._database.readByWhere(this._modelExam, {
@@ -57,12 +71,6 @@ export class ExamsRepository implements IExamsRepository {
 
   async deleteById(resourceId: number): Promise<void> {
         await this._database.delete(this._modelExam, { idExams: resourceId });
-  }
-
-  async list(): Promise<ExamEntity[]> {
-      const examGeneral = await this._database.list(this._modelExam, {});
-      const clients = examGeneral.map(modelsToEntities);
-      return clients;
   }
 
   async updateById(resource: ExamEntity): Promise<ExamEntity | undefined> {

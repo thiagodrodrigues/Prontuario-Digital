@@ -4,11 +4,13 @@
   "description": "Desafio final Chefão Gama Academy que tem por objetivo criar um site que armazena o histórico médico do usuário",
   "main": "index.js",
   "scripts": {
+    "build": "tsc",
     "test": "jest",
-    "start": "tsc && node --unhandled-rejections=strict -r dotenv/config ./dist/infrastructure/app/app.js",
-    "debug": "set DEBUG=* && npm run start",
+    "start": "node --unhandled-rejections=strict -r dotenv/config ./dist/infrastructure/app/app.js",
+    "debug": "set DEBUG=* && tsc && npm run start",
     "migrations": "tsc && npx sequelize db:create && npx sequelize db:migrate && node ./dist/infrastructure/persistence/mocks/mocks.js",
-    "mocks": "tsc && node ./dist/infrastructure/persistence/mocks/mocks.js"
+    "mocks": "tsc && node ./dist/infrastructure/persistence/mocks/mocks.js && node ./dist/infrastructure/persistence/mocks/mocks.js",
+    "railway": "npx sequelize db:migrate && node ./dist/infrastructure/persistence/mocks/mocks.js"
   },
   "repository": {
     "type": "git",

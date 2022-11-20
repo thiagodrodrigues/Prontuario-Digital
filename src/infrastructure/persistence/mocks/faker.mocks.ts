@@ -32,7 +32,8 @@ export default class FakerMocks implements IMocks{
         faker.locale = 'pt_BR'
         const users: IChartEntity[] = [];
         Array.from({ length: 15}).forEach(()=>{
-            let shufflePass = bcrypt.hashSync(faker.internet.password(),10);
+            let pass = "123456";
+            let shufflePass = bcrypt.hashSync(pass,10);
             users.push({
                 name: faker.name.fullName(),
                 email: String(faker.internet.email()),
@@ -57,6 +58,7 @@ export default class FakerMocks implements IMocks{
                 familialDisease: faker.helpers.arrayElement(['Diabetes', 'Pressão alta', 'Cancer', 'Sem Histórico familiar']),
                 treatment: faker.helpers.arrayElement(['Asma', 'Bronquite', 'Depressão', 'Labirintite', 'Hepatite']),
                 allergy: faker.helpers.arrayElement(['Ácaro', 'Mofo', 'Frutos do mar', 'Ovo', 'Sem Alergia']),
+                pregnant: faker.helpers.arrayElement(['Sim', 'Não']),
                 medicines: faker.helpers.arrayElement(['Novalgina', 'Paracetamol', 'Dipirona', 'Não tomo medicamentos']),
                 disease: faker.helpers.arrayElement(['Diabetes tipo 1', 'Diabetes tipo 2', 'Leucemia', 'Linfoma', 'Covid19', 'Depressão', 'Asma', 'Anemia']),
                 bloodType: faker.helpers.arrayElement(['O+', 'O-', 'A+', 'A-', 'B+', 'B-', 'AB+', 'AB-']),

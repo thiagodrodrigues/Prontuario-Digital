@@ -85,14 +85,25 @@ export class MySqlDatabase implements IDatabaseModel {
         );   
     }
 
-    async readByWhere(model: Sequelize.ModelCtor<Sequelize.Model<any,any>>, dataWhere: Sequelize.WhereOptions<any>):Promise<any> {
+
+    async listById(model: Sequelize.ModelCtor<Sequelize.Model<any,any>>, dataWhere: Sequelize.WhereOptions<any>):Promise<any> {
         try{
-            const user = await model.findOne({
+            const user = await model.findAll({
                 where: dataWhere
             })
             return user;
         
     }   catch(err){
+            throw new Error((err as Error).message);
+        }
+    }
+
+    readByWhere(model: Sequelize.ModelCtor<Sequelize.Model<any, any>>, dataWhere: Sequelize.WhereOptions<any>): any {
+        try{
+            return model.findOne({
+                where: dataWhere
+            });
+        } catch(err){
             throw new Error((err as Error).message);
         }
     }

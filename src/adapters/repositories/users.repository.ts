@@ -69,10 +69,14 @@ export class UsersRepository implements IUsersRepository {
 
     async updateById(resource: UsersEntity): Promise<UsersEntity | undefined> {
 
-        if(!resource.idUser) throw 'IdUser não forneceido'
-        let userModel = await this._database.read(this._modelUser, resource.idUser);
-        
+    
+        let userModel = await this._database.read(this._modelUser, Number(resource.idUser));
+
+        console.log('api repositories update userModel', userModel)
+
         const { userGeneral } = entitiesToModels(resource);
+
+        console.log('api repositories update userGeneral', userGeneral)
         
         await this._database.update(userModel, userGeneral);
 

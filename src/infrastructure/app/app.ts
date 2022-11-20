@@ -13,10 +13,11 @@ import { CommonRoutesConfig } from "../../adapters/apis/routes/common.routes.con
 import path from "path";
 import bodyParser from "body-parser";
 import cookieParser from "cookie-parser";
+import apiConfig from "../config/api.config";
 
 const app: express.Application = express();
 const server: http.Server = http.createServer();
-const PORT = process.env.PORT || 8000;
+const PORT = apiConfig.port || process.env.PORT || 8000;
 const routes: CommonRoutesConfig[]  = [];
 const debugLog: debug.IDebugger = debug('app');
 
