@@ -12,9 +12,9 @@ export default {
             idUser: {
                 type: Sequelize.DataTypes.INTEGER,
                 allowNull: false,
-                references: {         // Exams belongsTo User 1:N
+                references: {
                   model: {
-                            tableName: 'user'
+                            tableName: 'users'
                          },
 
                   key: 'idUser'
@@ -22,13 +22,12 @@ export default {
             },
             exam: Sequelize.DataTypes.STRING,
             date: Sequelize.DataTypes.DATE, 
-            status:Sequelize.DataTypes.STRING,
+            diagnosis: Sequelize.DataTypes.STRING,
             clinic: Sequelize.DataTypes.STRING,
             doctor: Sequelize.DataTypes.STRING,
-            comments: Sequelize.DataTypes.NUMBER,
+            comments: Sequelize.DataTypes.STRING,
             createdAt: Sequelize.DataTypes.DATE,
             updatedAt: Sequelize.DataTypes.DATE,
-            
         });
     },
     down: (queryInterface: Sequelize.QueryInterface) => {

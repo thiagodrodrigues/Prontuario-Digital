@@ -1,13 +1,12 @@
 export interface IAppointmentEntity {
-    idAppointment: number,
+    idAppointment?: number,
     idUser: number,
-    doctor: string,
-    hospital: string,
-    crm?: number,
-    date: Date,
-    symptoms?: string,
-    medicines?: string,
-    comments?: string,
+    medicalSpecialties: string, // especialidade médica (ex: cardiologista)
+    doctor: string, // médico
+    hospital: string, // consulta
+    date: Date, // data em que ocorreu
+    diagnosis?: string, //diagnóstico
+    comments?: string, //observações
     createdAt?: Date,
     updatedAt?: Date
 }

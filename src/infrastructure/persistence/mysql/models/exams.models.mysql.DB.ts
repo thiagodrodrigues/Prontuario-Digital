@@ -1,7 +1,7 @@
 import * as Sequelize from "sequelize";
-import { MySqlDatabase } from "../mysql.Database";
+import { MySqlDatabase } from "../mysql.database";
 
-export default MySqlDatabase.getInstance().createModel('exams',{
+export default MySqlDatabase.getInstance().createModel('exams', {
     idExams: {
         type: Sequelize.DataTypes.INTEGER,
         primaryKey: true,
@@ -11,9 +11,9 @@ export default MySqlDatabase.getInstance().createModel('exams',{
     idUser: {
         type: Sequelize.DataTypes.INTEGER,
         allowNull: false,
-        references: {         // Exams belongsTo User 1:N
+        references: {
           model: {
-                    tableName: 'user'
+                    tableName: 'users'
                  },
 
           key: 'idUser'
@@ -21,14 +21,13 @@ export default MySqlDatabase.getInstance().createModel('exams',{
     },
     exam: Sequelize.DataTypes.STRING,
     date: Sequelize.DataTypes.DATE, 
-    status:Sequelize.DataTypes.STRING,
+    diagnosis: Sequelize.DataTypes.STRING,
     clinic: Sequelize.DataTypes.STRING,
     doctor: Sequelize.DataTypes.STRING,
-    comments: Sequelize.DataTypes.NUMBER,
+    comments: Sequelize.DataTypes.STRING,
     createdAt: Sequelize.DataTypes.DATE,
     updatedAt: Sequelize.DataTypes.DATE,
-  
-})
+});
 
 
    

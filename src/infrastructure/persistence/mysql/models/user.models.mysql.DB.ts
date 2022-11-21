@@ -1,7 +1,7 @@
 import * as Sequelize from "sequelize";
-import { MySqlDatabase } from "../mysql.Database";
+import { MySqlDatabase } from "../mysql.database";
 
-export default MySqlDatabase.getInstance().createModel('user',{
+export default MySqlDatabase.getInstance().createModel('users',{
     idUser: {
         type: Sequelize.DataTypes.INTEGER,
         primaryKey: true,
@@ -12,18 +12,30 @@ export default MySqlDatabase.getInstance().createModel('user',{
     email: Sequelize.DataTypes.STRING,
     password: Sequelize.DataTypes.STRING,
     birthDate: Sequelize.DataTypes.DATE, 
-    healthPlan:Sequelize.DataTypes.STRING,
-    allergy: Sequelize.DataTypes.STRING,
-    bloodType: Sequelize.DataTypes.STRING,
-    weight: Sequelize.DataTypes.NUMBER,
-    height: Sequelize.DataTypes.NUMBER,
+    telephone: Sequelize.DataTypes.STRING,
+    maritalStatus: Sequelize.DataTypes.STRING,
+    sex: Sequelize.DataTypes.STRING,
+    weight: Sequelize.DataTypes.INTEGER,
+    height: Sequelize.DataTypes.INTEGER,
+    zipCode: Sequelize.DataTypes.STRING,
     address: Sequelize.DataTypes.STRING,
-    telephone: Sequelize.DataTypes.NUMBER,
-    emergency: Sequelize.DataTypes.NUMBER,
-    medicines: Sequelize.DataTypes.NUMBER,
-    photo: Sequelize.DataTypes.STRING,
-    comments: Sequelize.DataTypes.STRING,
+    number: Sequelize.DataTypes.INTEGER,
+    neighborhood: Sequelize.DataTypes.STRING,
+    complement: Sequelize.DataTypes.STRING,
+    state: Sequelize.DataTypes.STRING,
+    city: Sequelize.DataTypes.STRING,
+    smoke: Sequelize.DataTypes.STRING,
+    drugs: Sequelize.DataTypes.STRING,
+    exercises: Sequelize.DataTypes.STRING,
+    recreation: Sequelize.DataTypes.STRING,
+    familialDisease: Sequelize.DataTypes.STRING,
+    treatment: Sequelize.DataTypes.STRING,
+    allergy: Sequelize.DataTypes.STRING,
+    pregnant: Sequelize.DataTypes.STRING,
+    medicines: Sequelize.DataTypes.STRING,
+    disease: Sequelize.DataTypes.STRING,
+    bloodType: Sequelize.DataTypes.STRING,
+    status: Sequelize.DataTypes.BOOLEAN,
     createdAt: Sequelize.DataTypes.DATE,
     updatedAt: Sequelize.DataTypes.DATE,
-  
 })
