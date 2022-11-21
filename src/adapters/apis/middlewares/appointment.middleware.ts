@@ -6,13 +6,12 @@ const log: debug.IDebugger = debug('app:appointment-middleware');
 
 class AppointmentMiddleware {
 
-    async validateCrmNumber(req: express.Request, res: express.Response, next: express.NextFunction){
-        const crm = await req.body.crm
-        if(typeof crm == "number"){
+    async validateMedicalSpecialties(req: express.Request, res: express.Response, next: express.NextFunction){
+        if(req.body.medicalSpecialties) {
             next();
-        } else {
-            res.status(400).send({error: constantsConfig.APPOINTMENTS.MESSAGES.ERROR.CRM_NOT_NUMBER})
-        }
+    } else {
+        res.status(400).send({error: constantsConfig.APPOINTMENTS.MESSAGES.ERROR.VOID_MEDICAL_SPECIALTIES});
+    }
     }
     
     async validateRequiredDateBodyFields(req: express.Request, res: express.Response, next: express.NextFunction){

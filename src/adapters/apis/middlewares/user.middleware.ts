@@ -84,6 +84,14 @@ class UserMiddleware {
         }
     }
 
+    async validateNumberAddressNumber(req: express.Request, res: express.Response, next: express.NextFunction){
+        const weight = await req.body.weight
+        if(typeof weight == "number"){
+            next();
+        } else {
+            res.status(400).send({error: constantsConfig.USERS.MESSAGES.ERROR.NUMBER_ADDRESS_NOT_NUMBER})
+        }
+    }
 
 }
 
