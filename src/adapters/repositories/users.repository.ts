@@ -72,11 +72,7 @@ export class UsersRepository implements IUsersRepository {
     
         let userModel = await this._database.read(this._modelUser, Number(resource.idUser));
 
-        console.log('api repositories update userModel', userModel)
-
         const { userGeneral } = entitiesToModels(resource);
-
-        console.log('api repositories update userGeneral', userGeneral)
         
         await this._database.update(userModel, userGeneral);
 
