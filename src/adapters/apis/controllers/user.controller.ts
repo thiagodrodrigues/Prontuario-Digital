@@ -173,9 +173,11 @@ class UserController {
         const user = await loginAuthUsecase.execute(req.body);
         if(user){
             res.status(200).send({
-                idUser: user.user.idUser,
-                name: user.user.name,
-                email: user.user.email,
+                User: {
+                    idUser: user.user.idUser,
+                    name: user.user.name,
+                    email: user.user.email,
+                },
                 token: user.token
             });
         } else {
