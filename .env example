@@ -12,7 +12,7 @@ DB_PASS=sua senha
 DB_PORT=3306
 DB_NAME=prontuario
 
-SECRET_KEY=mzjDkCNvbvGv1TXkl6u76LtOXfR63TRN
+SECRET_KEY=
 
 PORT=8000
 
@@ -26,12 +26,12 @@ PORT=8000
 ##     ##    ########    ########     ######## 
 
 
-DB_HOST=containers-us-west-132.railway.app
-DB_USER=root
-DB_PASS=jO3Hh4Z1WsFtxzBb1tXr
-DB_PORT=5633
-DB_NAME=railway
+DB_HOST=
+DB_USER=
+DB_PASS=
+DB_PORT=
+DB_NAME=
 
-SECRET_KEY=mzjDkCNvbvGv1TXkl6u76LtOXfR63TRN
+SECRET_KEY=
 
 PORT=8000
