@@ -16,7 +16,7 @@ export default MySqlDatabase.getInstance().createModel('users',{
     maritalStatus: Sequelize.DataTypes.STRING,
     sex: Sequelize.DataTypes.STRING,
     weight: Sequelize.DataTypes.DECIMAL(5,2),
-    height: Sequelize.DataTypes.DECIMAL(3,2),
+    height: Sequelize.DataTypes.DECIMAL(5,2),
     zipCode: Sequelize.DataTypes.STRING,
     address: Sequelize.DataTypes.STRING,
     number: Sequelize.DataTypes.INTEGER,

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
-    "test": "jest",
+    "test": "jest --forceExit",
     "testopen": "jest --detectOpenHandles",
     "start": "node --unhandled-rejections=strict -r dotenv/config ./dist/infrastructure/app/app.js",
     "debug": "set DEBUG=* && tsc && npm run start",
