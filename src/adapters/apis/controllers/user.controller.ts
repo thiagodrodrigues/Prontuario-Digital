@@ -97,7 +97,9 @@ class UserController {
         const user = await readUserUsecase.execute({
             idUser: Number(req.params.idUser)
         });
-        let shufflePass = bcrypt.hashSync(req.body.password,10)
+        console.log(user);
+        if(req.body.password){
+        let shufflePass = bcrypt.hashSync(req.body.password,10);
         const userModel = await updateChartUsersUsecase.execute({
             idUser: user!.idUser,
             name: req.body.name,
@@ -159,7 +161,72 @@ class UserController {
             disease: userModel!.disease,
             bloodType: userModel!.bloodType,
             status: userModel!.status
+        })} else {
+            let pass = user!.password;
+            console.log(pass)
+            const userModel = await updateChartUsersUsecase.execute({
+            idUser: user!.idUser,
+            name: req.body.name,
+            email: req.body.email,
+            password: user!.password,
+            birthDate: req.body.birthDate,
+            telephone: req.body.telephone,
+            maritalStatus: req.body.maritalStatus,
+            sex: req.body.sex,
+            weight: req.body.weight,
+            height: req.body.height,
+            zipCode: req.body.zipCode,
+            address: req.body.address,
+            number: req.body.number,
+            neighborhood: req.body.neighborhood,
+            complement: req.body.complement,
+            state: req.body.state,
+            city: req.body.city,
+            smoke: req.body.smoke,
+            drugs: req.body.drugs,
+            exercises: req.body.exercises,
+            recreation: req.body.recreation,
+            familialDisease: req.body.familialDisease,
+            treatment: req.body.treatment,
+            medicines: req.body.medicines,
+            allergy: req.body.allergy,
+            pregnant: req.body.pregnant,
+            disease: req.body.disease,
+            bloodType: req.body.bloodType,
+            status: req.body.status
         });
+        log(userModel);
+        res.status(200).send({
+            idUser: userModel!.idUser,
+            name: userModel!.name,
+            email: userModel!.email,
+            birthDate: userModel!.birthDate,
+            telephone: userModel!.telephone,
+            maritalStatus: userModel!.maritalStatus,
+            sex: userModel!.sex,
+            weight: userModel!.weight,
+            height: userModel!.height,
+            zipCode: userModel!.zipCode,
+            address: userModel!.address,
+            number: userModel!.number,
+            neighborhood: userModel!.neighborhood,
+            complement: userModel!.complement,
+            state: userModel!.state,
+            city: userModel!.city,
+            smoke: userModel!.smoke,
+            drugs: userModel!.drugs,
+            exercises: userModel!.exercises,
+            recreation: userModel!.recreation,
+            familialDisease: userModel!.familialDisease,
+            treatment: userModel!.treatment,
+            medicines: userModel!.medicines,
+            allergy: userModel!.allergy,
+            pregnant: userModel!.pregnant,
+            disease: userModel!.disease,
+            bloodType: userModel!.bloodType,
+            status: userModel!.status
+        }) 
+        };
     }
 
 
