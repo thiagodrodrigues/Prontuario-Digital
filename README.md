@@ -79,12 +79,26 @@ A Documentação da API, rotas e exemplos foram feitos através do Postman e pub
   
 ---
 
-## :calling: Repositório Front-End:
+## :iphone: Repositório Front-End:
 
 O código utilizado pela equipe Front-End foi disponibilizado no GitHub através do link: <br>
 
 <h1>
 <p align="center"> <a href="https://github.com/guisdarocha/vidaemdia"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg" height="30" width="30" alt="github logo"> Código Front-End - GitHub <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg" height="30" width="30" alt="github logo"></a> </p>
+</h1>
+
+</br>        
+  
+  
+  
+---
+
+## :pager: Repositório Back-End:
+
+O código utilizado pela equipe Back-End foi disponibilizado no GitHub através do link: <br>
+
+<h1>
+<p align="center"> <a href="https://github.com/thiagodrodrigues/Prontuario-Digital"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg" height="30" width="30" alt="github logo"> Código Back-End - GitHub <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg" height="30" width="30" alt="github logo"></a> </p>
 </h1>
 
 </br>        
