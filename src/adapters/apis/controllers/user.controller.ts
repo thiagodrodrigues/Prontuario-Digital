@@ -177,11 +177,7 @@ class UserController {
                 User: {
                     idUser: user.user.idUser,
                     name: user.user.name,
-<<<<<<< HEAD
-                    email: user.user.email,
-=======
                     email: user.user.email
->>>>>>> 92a72cf55d1f607dc536ed001ce07503ba662820
                 },
                 token: user.token
             });
