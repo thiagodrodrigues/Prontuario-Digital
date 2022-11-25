@@ -79,7 +79,7 @@ A Documentação da API, rotas e exemplos foram feitos através do Postman e pub
   
 ---
 
-## :floppy_disk: Repositório Front-End:
+## :calling: Repositório Front-End:
 
 O código utilizado pela equipe Front-End foi disponibilizado no GitHub através do link: <br>
 
