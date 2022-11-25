@@ -120,10 +120,10 @@ As seguintes ferramentas foram usadas na construção do projeto:
    <td align="center"> <img src="https://avatars.githubusercontent.com/u/91029460?v=4" width=175/></br> Hellimateas Chaves </br><a href="https://github.com/Hellimateas"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg" height="30" width="30" alt="github-logo" /> </a> <a href="https://www.linkedin.com/in/hellimateas/"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-plain.svg" height="30" width="30" alt="linkedin-logo" /> </a>
    </td>
       
-   <td align="center"> <img src="https://avatars.githubusercontent.com/u/109252849?v=4" width=175/></br> Breno Borges </br><a href="https://github.com/brenobsd"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg" height="30" width="30" alt="github-logo" /> </a> <a href="https://www.linkedin.com"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-plain.svg" height="30" width="30" alt="linkedin-logo" /> </a>
+   <td align="center"> <img src="https://avatars.githubusercontent.com/u/109252849?v=4" width=175/></br> Breno Borges </br><a href="https://github.com/brenobsd"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg" height="30" width="30" alt="github-logo" /> </a> 
    </td>
       
-   <td align="center"> <img src="https://avatars.githubusercontent.com/u/109237273?v=4" width=175/></br> Fernando Dygas </br><a href="https://github.com/FDygas"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg" height="30" width="30" alt="github-logo" /> </a> <a href="https://www.linkedin.com"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-plain.svg" height="30" width="30" alt="linkedin-logo" /> </a>
+   <td align="center"> <img src="https://avatars.githubusercontent.com/u/109237273?v=4" width=175/></br> Fernando Dygas </br><a href="https://github.com/FDygas"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg" height="30" width="30" alt="github-logo" /> </a> 
    </td>
    
   </tr>
@@ -139,20 +139,20 @@ As seguintes ferramentas foram usadas na construção do projeto:
    <td align="center"> <img src="https://avatars.githubusercontent.com/u/103468538?v=4" width=175/></br> Fábio Volpi </br><a href="https://github.com/volpifabio"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg" height="30" width="30" alt="github-logo" /> </a> <a href=""> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-plain.svg" height="30" width="30" alt="linkedin-logo" /> </a>
    </td>
      
-   <td align="center"> <img src="https://ca.slack-edge.com/T03GMFFKYLW-U03N33RTGKA-f71c799e9832-512" width=175/></br> Gabriel da Silva </br><a href="https://github.com/"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg" height="30" width="30" alt="github-logo" /> </a> <a href=""> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-plain.svg" height="30" width="30" alt="linkedin-logo" /> </a>
+   <td align="center"> <img src="https://ca.slack-edge.com/T03GMFFKYLW-U03N33RTGKA-f71c799e9832-512" width=175/></br> Gabriel da Silva </br><a href="https://github.com/"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg" height="30" width="30" alt="github-logo" /> </a> <a href="https://www.linkedin.com/in/gabriel-silva-4063b3241/"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-plain.svg" height="30" width="30" alt="linkedin-logo" /> </a>
    </td>
      
-   <td align="center"> <img src="https://avatars.githubusercontent.com/u/109252959?v=4" width=175/></br> Renan Jello </br><a href="https://github.com/RenanJello"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg" height="30" width="30" alt="github-logo" /> </a> <a href=""> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-plain.svg" height="30" width="30" alt="linkedin-logo" /> </a>
+   <td align="center"> <img src="https://avatars.githubusercontent.com/u/109252959?v=4" width=175/></br> Renan Jello </br><a href="https://github.com/RenanJello"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg" height="30" width="30" alt="github-logo" /> </a> 
    </td>
      </tr>
      <tr>
-   <td align="center"> <img src="https://avatars.githubusercontent.com/u/109170496?v=4" width=175/></br> Guilherme Rocha </br><a href="https://github.com/guisdarocha"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg" height="30" width="30" alt="github-logo" /> </a> <a href=""> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-plain.svg" height="30" width="30" alt="linkedin-logo" /> </a>
+   <td align="center"> <img src="https://avatars.githubusercontent.com/u/109170496?v=4" width=175/></br> Guilherme Rocha </br><a href="https://github.com/guisdarocha"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg" height="30" width="30" alt="github-logo" /> </a> 
    </td>
      
    <td align="center"> <img src="https://avatars.githubusercontent.com/u/100455177?v=4" width=175/></br> Patrick Segalla </br><a href="https://github.com/PatrickSegalla"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg" height="30" width="30" alt="github-logo" /> </a> <a href="https://www.linkedin.com/in/patricksegalla"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-plain.svg" height="30" width="30" alt="linkedin-logo" /> </a>
    </td>
      
-   <td align="center"> <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" width=175/></br> Wallace Bruno </br><a href="https://github.com/"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg" height="30" width="30" alt="github-logo" /> </a> <a href=""> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-plain.svg" height="30" width="30" alt="linkedin-logo" /> </a>
+   <td align="center"> <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" width=175/></br> Wallace Bruno </br> 
    </td>
      
    <td align="center"> <img src="https://avatars.githubusercontent.com/u/108154051?v=4" width=175/></br> Wesley Militão </br><a href="https://github.com/mfmwes"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg" height="30" width="30" alt="github-logo" /> </a> <a href="https://www.linkedin.com/in/wesley-militao/"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-plain.svg" height="30" width="30" alt="linkedin-logo" /> </a>
