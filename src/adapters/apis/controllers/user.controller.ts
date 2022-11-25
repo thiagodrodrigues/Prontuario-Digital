@@ -97,7 +97,6 @@ class UserController {
         const user = await readUserUsecase.execute({
             idUser: Number(req.params.idUser)
         });
-        console.log('controllers update', user)
         let shufflePass = bcrypt.hashSync(req.body.password,10)
         const userModel = await updateChartUsersUsecase.execute({
             idUser: user!.idUser,
@@ -178,7 +177,11 @@ class UserController {
                 User: {
                     idUser: user.user.idUser,
                     name: user.user.name,
+<<<<<<< HEAD
                     email: user.user.email,
+=======
+                    email: user.user.email
+>>>>>>> 92a72cf55d1f607dc536ed001ce07503ba662820
                 },
                 token: user.token
             });
