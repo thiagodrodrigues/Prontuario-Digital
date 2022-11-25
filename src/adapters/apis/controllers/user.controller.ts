@@ -9,10 +9,12 @@ import loginAuthUsecase from '../../../domain/usecases/users/login.users.usecase
 import constantsConfig from '../../../infrastructure/config/constants.config';
 import bcrypt from 'bcrypt';
 import jwt  from 'jsonwebtoken';
+import listUsersUsecase from '../../../domain/usecases/users/list.users.usecase';
 
 const log: debug.IDebugger = debug('app:users-controller');
 
 class UserController {
+
     async getUserById(req: express.Request, res: express.Response) {
         const user = await readUserUsecase.execute({
             idUser: Number(req.params.idUser)

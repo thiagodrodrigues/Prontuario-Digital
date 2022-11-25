@@ -1,23 +1,24 @@
 import CreateUsersUseCase from "../create.users.usecase";
 import ReadUsersUseCase from "../read.users.usecase";
 import { UsersEntity } from "../../../entities/users/users.entity";
+import readEmailUsersUsecase from "../readEmail.users.usecase";
+import updateUsersUsecase from "../update.users.usecase";
 import deleteUsersUsecase from "../delete.users.usecase";
 
 test("Teste unitário createUsercase", async () => {  
-
     const usercreted: UsersEntity = {
-        "idUser": 98,
+        "idUser": 96,
         "name": "Maria Barros",
-        "email": "maria1@email.com",
+        "email": "maria3@email.com",
         "password": "123456"        
     };
     await CreateUsersUseCase.execute(usercreted)
-    const user = {
-        "idUser": 98,
-        "name": "Maria Barros",
-        "email": "maria1@email.com",
-        "birthDate": null,
-        "telephone": null,
+    const userUpdate = {
+        "idUser": 96,
+        "name": "Maria Cecília Barros",
+        "email": "maria3@email.com",
+        "birthDate": "1997-05-17 04:03:27",
+        "telephone": "(22) 57862-2540",
         "maritalStatus": null,
         "sex": null,
         "weight": null,
@@ -42,9 +43,8 @@ test("Teste unitário createUsercase", async () => {
         "bloodType": null,
         "status": null                
     };
+   
+    expect(await updateUsersUsecase.execute(userUpdate)).toMatchObject(userUpdate);
 
-    expect(await ReadUsersUseCase.execute({ idUser:98 })).toMatchObject(user);
-
-    await deleteUsersUsecase.execute({idUser: 98})
-
+    await deleteUsersUsecase.execute({idUser: 96})
 });
