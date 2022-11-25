@@ -23,7 +23,6 @@ export class UserRoutes extends CommonRoutesConfig {
             .put(
                 UserMiddleware.validateRequiredNameBodyFields, // Verifica se o campo Nome foi preenchido
                 UserMiddleware.validateRequiredEmailBodyFields, // Verifica se o campo Email foi preenchido
-                UserMiddleware.validateRequiredPasswordBodyFields, // Verifica se o campo Senha foi preenchido
                 UserMiddleware.validateRequiredBirthDateBodyFields, // Verifica se o campo Data de Nascimento foi preenchido
                 UserMiddleware.validateHeightNumber, // Verifica se o campo altura é um número
                 UserMiddleware.validateWeightNumber, // Verifica se o campo Peso é um número
