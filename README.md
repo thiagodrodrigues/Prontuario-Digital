@@ -155,7 +155,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
    <td align="center"> <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" width=175/></br> Wallace Bruno </br><a href="https://github.com/"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg" height="30" width="30" alt="github-logo" /> </a> <a href=""> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-plain.svg" height="30" width="30" alt="linkedin-logo" /> </a>
    </td>
      
-   <td align="center"> <img src="https://avatars.githubusercontent.com/u/108154051?v=4" width=175/></br> Wesley Militão </br><a href="https://github.com/mfmwes"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg" height="30" width="30" alt="github-logo" /> </a> <a href=""> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-plain.svg" height="30" width="30" alt="linkedin-logo" /> </a>
+   <td align="center"> <img src="https://avatars.githubusercontent.com/u/108154051?v=4" width=175/></br> Wesley Militão </br><a href="https://github.com/mfmwes"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original-wordmark.svg" height="30" width="30" alt="github-logo" /> </a> <a href="https://www.linkedin.com/in/wesley-militao/"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-plain.svg" height="30" width="30" alt="linkedin-logo" /> </a>
    </td>
    
   </tr>
