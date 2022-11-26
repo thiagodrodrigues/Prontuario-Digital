@@ -13,6 +13,9 @@ export class UserRoutes extends CommonRoutesConfig {
                     
         this.app.route(`/login`)
             .post(UserController.login); // logar um usuário
+
+        this.app.route('/admin/listUsers')
+            .get(UserController.listUsers) // Lista todos os usuários cadastrados
     
         this.app.route(`/users/:idUser`)
             .all(

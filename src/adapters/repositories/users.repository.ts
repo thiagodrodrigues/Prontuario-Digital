@@ -64,7 +64,12 @@ export class UsersRepository implements IUsersRepository {
     async list(): Promise<UsersEntity[]> {
         const userGeneral = await this._database.list(this._modelUser);
         const clients = userGeneral.map(modelsToEntities);
-        return clients;
+        const user0 = {idUser: clients[0].idUser, name: clients[0].name, email: clients[0].email};
+        const user1 = {idUser: clients[1].idUser, name: clients[1].name, email: clients[1].email};
+        const user2 = {idUser: clients[2].idUser, name: clients[2].name, email: clients[2].email};
+        const resposta = [user0, user1, user2]
+        
+        return resposta;
     }
 
     async updateById(resource: UsersEntity): Promise<UsersEntity | undefined> {
