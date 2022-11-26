@@ -1,14 +1,12 @@
 import express from 'express';
 import createUserUsecase from '../../../domain/usecases/users/create.users.usecase';
 import readUserUsecase from '../../../domain/usecases/users/read.users.usecase';
-import updateUserUsecase from '../../../domain/usecases/users/update.users.usecase';
 import deleteUserUsecase from '../../../domain/usecases/users/delete.users.usecase';
 import updateChartUsersUsecase from '../../../domain/usecases/users/updateChart.users.usecase';
 import debug from 'debug';
 import loginAuthUsecase from '../../../domain/usecases/users/login.users.usecase';
 import constantsConfig from '../../../infrastructure/config/constants.config';
 import bcrypt from 'bcrypt';
-import jwt  from 'jsonwebtoken';
 import listUsersUsecase from '../../../domain/usecases/users/list.users.usecase';
 
 const log: debug.IDebugger = debug('app:users-controller');
@@ -255,6 +253,12 @@ class UserController {
         }
         
     }
+
+    async listUsers(req: express.Request, res: express.Response) {
+        const users = await listUsersUsecase.execute();
+        res.status(200).send(users);
+    }
+
 }
 
 export default new UserController();
