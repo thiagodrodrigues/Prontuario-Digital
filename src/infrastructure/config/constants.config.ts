@@ -12,7 +12,8 @@ export default {
                 HEIGHY_NOT_NUMBER: `O campo 'Altura' deve ser um número`,
                 WEIGHY_NOT_NUMBER: `O campo 'Peso' deve ser um número`,
                 NUMBER_ADDRESS_NOT_NUMBER: `O campo 'Número' deve ser um número`,
-                UNAUTHORIZED: `Usuário logado deve ser igual ao informado no parâmetro. Não autorizado.`
+                UNAUTHORIZED: `Usuário logado deve ser igual ao informado no parâmetro. Não autorizado.`,
+                STATUS_NOT_TRUE: `Você precisa concordar com os Termos de Uso.`
             }
         }
     },

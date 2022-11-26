@@ -27,6 +27,7 @@ export class UserRoutes extends CommonRoutesConfig {
                 UserMiddleware.validateHeightNumber, // Verifica se o campo altura é um número
                 UserMiddleware.validateWeightNumber, // Verifica se o campo Peso é um número
                 UserMiddleware.validateUserRepeated, // Verifica se o email enviado já existe
+                UserMiddleware.validateStatusTrue, // Verifica se o usuário concordou com os termos de uso
                 UserController.updateUserChart // atualizar um usuário específico
                 
                 ) 
