@@ -1,3 +1,4 @@
+import { StringDataType } from "sequelize"
 import { IUserEntity } from "./user.entity"
 
 export interface IChartEntity extends IUserEntity {
@@ -23,7 +24,7 @@ export interface IChartEntity extends IUserEntity {
     allergy?: string, // > alergias
     pregnant?: string, // grávida
     medicines?: string, // medicamentos
-    disease?: string, //* histórico de doenças
+    disease?: string[], //* histórico de doenças
     bloodType?: string, // > tipo sanguíneo
     vaccines?: string, //* Vacinas
     status?: boolean //* aceita termos

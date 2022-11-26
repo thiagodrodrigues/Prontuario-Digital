@@ -33,7 +33,7 @@ export default MySqlDatabase.getInstance().createModel('users',{
     allergy: Sequelize.DataTypes.STRING,
     pregnant: Sequelize.DataTypes.STRING,
     medicines: Sequelize.DataTypes.STRING,
-    disease: Sequelize.DataTypes.STRING,
+    disease: Sequelize.DataTypes.JSON,
     bloodType: Sequelize.DataTypes.STRING,
     status: Sequelize.DataTypes.BOOLEAN,
     createdAt: Sequelize.DataTypes.DATE,

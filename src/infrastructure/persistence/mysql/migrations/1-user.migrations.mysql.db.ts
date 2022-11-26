@@ -1,4 +1,5 @@
 import * as Sequelize from 'sequelize';
+import { DataType } from 'sequelize-typescript';
 
 export default {
     up: (queryInterface: Sequelize.QueryInterface) => {
@@ -34,7 +35,7 @@ export default {
             allergy: Sequelize.DataTypes.STRING,
             pregnant: Sequelize.DataTypes.STRING,
             medicines: Sequelize.DataTypes.STRING,
-            disease: Sequelize.DataTypes.STRING,
+            disease: Sequelize.DataTypes.JSON,
             bloodType: Sequelize.DataTypes.STRING,
             status: Sequelize.DataTypes.BOOLEAN,
             createdAt: Sequelize.DataTypes.DATE,

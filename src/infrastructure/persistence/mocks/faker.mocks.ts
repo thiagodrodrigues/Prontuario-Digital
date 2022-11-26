@@ -60,7 +60,7 @@ export default class FakerMocks implements IMocks{
                 allergy: faker.helpers.arrayElement(['Ácaro', 'Mofo', 'Frutos do mar', 'Ovo', 'Sem Alergia']),
                 pregnant: faker.helpers.arrayElement(['Sim', 'Não']),
                 medicines: faker.helpers.arrayElement(['Novalgina', 'Paracetamol', 'Dipirona', 'Não tomo medicamentos']),
-                disease: faker.helpers.arrayElement(['Diabetes tipo 1', 'Diabetes tipo 2', 'Leucemia', 'Linfoma', 'Covid19', 'Depressão', 'Asma', 'Anemia']),
+                disease: faker.helpers.arrayElements(['Diabetes tipo 1', 'Diabetes tipo 2', 'Leucemia', 'Linfoma', 'Covid19', 'Depressão', 'Asma', 'Anemia']),
                 bloodType: faker.helpers.arrayElement(['O+', 'O-', 'A+', 'A-', 'B+', 'B-', 'AB+', 'AB-']),
                 status: faker.helpers.arrayElement([true]),
             })
