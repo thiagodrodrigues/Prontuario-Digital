@@ -12,13 +12,13 @@ class AuthMiddleware {
 
             if(!token){
                 res.status(401).send({
-                    error: constantsConfig.USERS.MESSAGES.ERROR.USER_UNAUTHENTICATED
+                    error: constantsConfig.USERS.MESSAGES.ERROR.REQUIRE_LOGIN
                 });
             } else {
                 const decoded = jwt.verify(token, String(process.env.SECRET_KEY));
                 if(typeof decoded == `string`){
                     res.status(401).send({
-                        error: constantsConfig.USERS.MESSAGES.ERROR.USER_UNAUTHENTICATED
+                        error: constantsConfig.USERS.MESSAGES.ERROR.REQUIRE_LOGIN
                     });
                 } else {
                     const params = await Number(req.params.idUser);
@@ -34,7 +34,7 @@ class AuthMiddleware {
 
         } catch (err) {
             res.status(401).send({
-                error: constantsConfig.USERS.MESSAGES.ERROR.USER_UNAUTHENTICATED
+                error: constantsConfig.USERS.MESSAGES.ERROR.REQUIRE_LOGIN
             });
         }
     }
