@@ -93,6 +93,15 @@ class UserMiddleware {
         }
     }
 
+    async validateStatusTrue(req: express.Request, res: express.Response, next: express.NextFunction){
+        const status = await req.body.status
+        if(status === true){
+            next();
+        } else {
+            res.status(400).send({error: constantsConfig.USERS.MESSAGES.ERROR.STATUS_NOT_TRUE})
+        }
+    }
+
 }
 
 export default new UserMiddleware();
